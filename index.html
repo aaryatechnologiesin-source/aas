@@ -1,0 +1,2244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Aarya Technologies | Premium Websites, Shopify, SEO & Automation</title>
+  <meta name="description" content="Aarya Technologies builds premium, responsive, and SEO-optimized websites, Shopify stores, and business automation solutions at affordable prices for Indian businesses and startups.">
+  <meta name="keywords" content="Web Development, Shopify Store Development, SEO Optimization, Business Automation, Website Design India, Aarya Technologies">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://aaryatechnologies.com/">
+
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aaryatechnologies.com/">
+  <meta property="og:title" content="Aarya Technologies | Premium Web Development Agency">
+  <meta property="og:description" content="We Build Premium Websites That Build Your Business. Modern, fast, and SEO-optimized web solutions.">
+  <meta property="og:image" content="https://aaryatechnologies.com/og-image.jpg">
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Schema.org JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Aarya Technologies",
+    "image": "https://aaryatechnologies.com/logo.png",
+    "@id": "https://aaryatechnologies.com",
+    "url": "https://aaryatechnologies.com",
+    "telephone": "+919876543210",
+    "priceRange": "₹4999 - ₹25000",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "IN"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "09:00",
+      "closes": "19:00"
+    },
+    "sameAs": [
+      "https://facebook.com",
+      "https://instagram.com",
+      "https://linkedin.com"
+    ]
+  }
+  </script>
+
+  <style>
+    /* ==========================================================================
+       CSS VARIABLES & THEME SETUP
+       ========================================================================== */
+    :root {
+      /* Brand Palette */
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --primary-gradient: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+      --secondary: #7c3aed;
+      --shopify-green: #10b981;
+      --shopify-light: rgba(16, 185, 129, 0.1);
+
+      /* Dark Theme (Default) */
+      --bg-main: #0b0f19;
+      --bg-surface: #111827;
+      --bg-card: rgba(17, 24, 39, 0.7);
+      --bg-glass: rgba(31, 41, 55, 0.4);
+      --border-color: rgba(255, 255, 255, 0.08);
+      --border-hover: rgba(37, 99, 235, 0.4);
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+      --text-inverse: #0f172a;
+      --shadow-sm: 0 2px 4px rgba(0,0,0,0.3);
+      --shadow-md: 0 10px 25px -5px rgba(0,0,0,0.5);
+      --shadow-glow: 0 0 25px rgba(37, 99, 235, 0.25);
+
+      /* Design Tokens */
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-full: 9999px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --container-width: 1240px;
+    }
+
+    /* Light Theme Overrides */
+    [data-theme="light"] {
+      --bg-main: #f8fafc;
+      --bg-surface: #ffffff;
+      --bg-card: rgba(255, 255, 255, 0.8);
+      --bg-glass: rgba(241, 245, 249, 0.6);
+      --border-color: rgba(0, 0, 0, 0.08);
+      --border-hover: rgba(37, 99, 235, 0.4);
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --text-inverse: #ffffff;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+      --shadow-md: 0 10px 25px -5px rgba(0,0,0,0.08);
+      --shadow-glow: 0 0 25px rgba(37, 99, 235, 0.15);
+    }
+
+    /* ==========================================================================
+       RESET & BASE STYLES
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    button, input, textarea {
+      font-family: inherit;
+      border: none;
+      outline: none;
+    }
+
+    .container {
+      max-width: var(--container-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .section-padding {
+      padding: 6rem 0;
+    }
+
+    /* Focus Visible Accessibility */
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 4px;
+    }
+
+    /* ==========================================================================
+       TYPOGRAPHY & GRADIENTS
+       ========================================================================== */
+    .gradient-text {
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 4rem auto;
+    }
+
+    .section-subtitle {
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      color: var(--text-main);
+    }
+
+    .section-description {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+       BUTTONS & UI COMPONENTS
+       ========================================================================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.875rem 1.75rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--primary-gradient);
+      color: #ffffff;
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+    }
+
+    .btn-secondary {
+      background: var(--bg-glass);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+      backdrop-filter: blur(10px);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .btn-shopify {
+      background: var(--shopify-green);
+      color: #ffffff;
+      box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+    }
+
+    .btn-shopify:hover {
+      background: #059669;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.375rem 1rem;
+      border-radius: var(--radius-full);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      background: rgba(37, 99, 235, 0.1);
+      color: var(--primary);
+      border: 1px solid rgba(37, 99, 235, 0.2);
+    }
+
+    .glass-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      transition: var(--transition);
+    }
+
+    .glass-card:hover {
+      border-color: var(--border-hover);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* ==========================================================================
+       NAVBAR
+       ========================================================================== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 1.25rem 0;
+      transition: var(--transition);
+    }
+
+    .navbar.scrolled {
+      padding: 0.875rem 0;
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--text-main);
+    }
+
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-sm);
+      background: var(--primary-gradient);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 1.25rem;
+      font-weight: 800;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav-link {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--text-main);
+    }
+
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--primary-gradient);
+      border-radius: var(--radius-full);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .theme-toggle {
+      width: 42px;
+      height: 42px;
+      border-radius: var(--radius-full);
+      background: var(--bg-glass);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: 1.125rem;
+    }
+
+    .theme-toggle:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      z-index: 1001;
+    }
+
+    .hamburger span {
+      width: 24px;
+      height: 2px;
+      background: var(--text-main);
+      transition: var(--transition);
+    }
+
+    /* Mobile Drawer */
+    @media (max-width: 991px) {
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 380px;
+        height: 100vh;
+        background: var(--bg-surface);
+        padding: 6rem 2rem 2rem 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+        border-left: 1px solid var(--border-color);
+      }
+
+      .nav-menu.active {
+        right: 0;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+      }
+
+      .nav-link {
+        font-size: 1.125rem;
+      }
+
+      .nav-actions-mobile {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .hamburger.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+      .hamburger.active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+    }
+
+    /* ==========================================================================
+       HERO SECTION
+       ========================================================================== */
+    .hero {
+      padding-top: 10rem;
+      padding-bottom: 6rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg-glow {
+      position: absolute;
+      top: -10%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, rgba(124, 58, 237, 0.08) 50%, transparent 70%);
+      filter: blur(60px);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -1px;
+      margin: 1.25rem 0;
+    }
+
+    .hero-sub {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      max-width: 90%;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .trust-line {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-color);
+      padding-top: 1.5rem;
+      width: 100%;
+    }
+
+    .trust-line item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .trust-line i {
+      color: var(--shopify-green);
+    }
+
+    /* Hero Visual Mockup */
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .mockup-laptop {
+      width: 100%;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 16px 16px 0 0;
+      box-shadow: var(--shadow-md), var(--shadow-glow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .mockup-header {
+      height: 28px;
+      background: rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+      gap: 6px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .dot-red { background: #ef4444; }
+    .dot-yellow { background: #f59e0b; }
+    .dot-green { background: #10b981; }
+
+    .mockup-body {
+      padding: 1.5rem;
+      background: linear-gradient(180deg, var(--bg-surface) 0%, var(--bg-main) 100%);
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .mockup-skeleton {
+      height: 16px;
+      border-radius: 4px;
+      background: var(--border-color);
+    }
+
+    /* Floating UI Cards */
+    .floating-card {
+      position: absolute;
+      padding: 0.875rem 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.875rem;
+      animation: float 4s ease-in-out infinite;
+      z-index: 10;
+    }
+
+    .fc-analytics {
+      top: 10%;
+      right: -20px;
+      animation-delay: 0s;
+    }
+
+    .fc-speed {
+      bottom: 12%;
+      left: -30px;
+      animation-delay: 2s;
+    }
+
+    .fc-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+    }
+
+    /* ==========================================================================
+       STATS SECTION
+       ========================================================================== */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .stat-card {
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .stat-label {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+       SERVICES SECTION
+       ========================================================================== */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .service-card {
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      position: relative;
+    }
+
+    .service-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius-md);
+      background: rgba(37, 99, 235, 0.1);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      transition: var(--transition);
+    }
+
+    .service-card:hover .service-icon {
+      background: var(--primary-gradient);
+      color: #ffffff;
+      transform: scale(1.05);
+    }
+
+    .service-title {
+      font-size: 1.375rem;
+      font-weight: 700;
+      margin-bottom: 0.875rem;
+    }
+
+    .service-desc {
+      color: var(--text-muted);
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .service-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: var(--primary);
+      transition: var(--transition);
+    }
+
+    .service-link:hover {
+      gap: 0.75rem;
+    }
+
+    /* ==========================================================================
+       PRICING SECTION
+       ========================================================================== */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      align-items: stretch;
+    }
+
+    .pricing-card {
+      padding: 3rem 2rem;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .pricing-card.featured {
+      border: 2px solid var(--primary);
+      box-shadow: var(--shadow-glow);
+      transform: scale(1.02);
+    }
+
+    .popular-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--primary-gradient);
+      color: #fff;
+      padding: 4px 16px;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .pricing-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .pricing-price {
+      font-size: 2.75rem;
+      font-weight: 800;
+      margin-bottom: 0.25rem;
+      color: var(--text-main);
+    }
+
+    .pricing-period {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .pricing-features {
+      margin-bottom: 2.5rem;
+      flex-grow: 1;
+    }
+
+    .pricing-features li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      font-size: 0.9375rem;
+      color: var(--text-muted);
+    }
+
+    .pricing-features i {
+      color: var(--shopify-green);
+      font-size: 0.875rem;
+    }
+
+    .promo-tag {
+      background: var(--shopify-light);
+      color: var(--shopify-green);
+      border: 1px dashed var(--shopify-green);
+      padding: 0.625rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ==========================================================================
+       SHOPIFY PROMO BANNER
+       ========================================================================== */
+    .shopify-banner {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(37, 99, 235, 0.05) 100%);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      border-radius: var(--radius-lg);
+      padding: 3.5rem;
+      margin-top: 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .shopify-banner-content {
+      max-width: 650px;
+    }
+
+    .shopify-badge {
+      background: var(--shopify-green);
+      color: #fff;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    .shopify-banner h3 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+    }
+
+    .shopify-banner p {
+      color: var(--text-muted);
+      font-size: 1.0625rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ==========================================================================
+       PORTFOLIO SECTION
+       ========================================================================== */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .portfolio-card {
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .portfolio-thumb {
+      width: 100%;
+      height: 220px;
+      background: var(--bg-surface);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .portfolio-thumb-bg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .portfolio-card:hover .portfolio-thumb-bg {
+      transform: scale(1.05);
+    }
+
+    .portfolio-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .portfolio-card:hover .portfolio-overlay {
+      opacity: 1;
+    }
+
+    .portfolio-info {
+      padding: 1.5rem;
+    }
+
+    .portfolio-category {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.25rem;
+    }
+
+    .portfolio-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    /* ==========================================================================
+       WHY CHOOSE US SECTION
+       ========================================================================== */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .benefit-card {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .benefit-icon {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 1.25rem auto;
+      border-radius: var(--radius-full);
+      background: var(--primary-gradient);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.375rem;
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.25);
+    }
+
+    .benefit-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .benefit-desc {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+       PROCESS SECTION
+       ========================================================================== */
+    .process-timeline {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+      position: relative;
+    }
+
+    .process-step {
+      padding: 1.75rem 1.25rem;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .step-number {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .step-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .step-desc {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+       CTA SECTION
+       ========================================================================== */
+    .cta-box {
+      background: var(--primary-gradient);
+      border-radius: var(--radius-lg);
+      padding: 5rem 2rem;
+      text-align: center;
+      color: #ffffff;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-glow);
+    }
+
+    .cta-box h2 {
+      font-size: 2.75rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: #ffffff;
+    }
+
+    .cta-box p {
+      font-size: 1.25rem;
+      max-width: 650px;
+      margin: 0 auto 2.5rem auto;
+      opacity: 0.9;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .cta-box .btn-primary {
+      background: #ffffff;
+      color: var(--primary);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .cta-box .btn-primary:hover {
+      background: #f8fafc;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    }
+
+    /* ==========================================================================
+       TESTIMONIALS & FAQ
+       ========================================================================== */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .testimonial-card {
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .stars {
+      color: #f59e0b;
+      margin-bottom: 1rem;
+      font-size: 0.875rem;
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      font-size: 0.9375rem;
+    }
+
+    .client-info {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .client-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-full);
+      background: var(--primary-gradient);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .client-details h4 {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .client-details p {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* Accordion FAQ */
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      background: var(--bg-card);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .faq-button {
+      width: 100%;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: none;
+      color: var(--text-main);
+      font-size: 1.0625rem;
+      font-weight: 700;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .faq-icon {
+      transition: transform 0.3s ease;
+      color: var(--primary);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
+      padding: 0 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.9375rem;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 500px;
+      padding: 0 1.5rem 1.25rem 1.5rem;
+      transition: max-height 0.3s cubic-bezier(1, 0, 1, 0);
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(180deg);
+    }
+
+    /* ==========================================================================
+       FOOTER
+       ========================================================================== */
+    .footer {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-color);
+      padding-top: 5rem;
+      padding-bottom: 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr repeat(3, 1fr);
+      gap: 3rem;
+      margin-bottom: 4rem;
+    }
+
+    .footer-brand p {
+      color: var(--text-muted);
+      margin: 1rem 0 1.5rem 0;
+      max-width: 320px;
+      font-size: 0.9375rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .social-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-full);
+      background: var(--bg-glass);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      font-size: 0.875rem;
+    }
+
+    .social-icon:hover {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    .footer-col h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      font-size: 0.9375rem;
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
+    }
+
+    .footer-bottom {
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    /* Floating WhatsApp & Back-To-Top */
+    .floating-actions {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      z-index: 999;
+    }
+
+    .float-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition);
+      font-size: 1.25rem;
+      cursor: pointer;
+    }
+
+    .float-whatsapp {
+      background: #25d366;
+    }
+
+    .float-whatsapp:hover {
+      transform: scale(1.1);
+    }
+
+    .float-top {
+      background: var(--bg-surface);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .float-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .float-top:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    /* ==========================================================================
+       RESPONSIVE DESIGN BREAKPOINTS
+       ========================================================================== */
+    @media (max-width: 991px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-content {
+        align-items: center;
+      }
+
+      .hero-sub {
+        max-width: 100%;
+      }
+
+      .hero-cta-group {
+        justify-content: center;
+      }
+
+      .trust-line {
+        justify-content: center;
+      }
+
+      .shopify-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 2.5rem 1.5rem;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero-title {
+        font-size: 2.35rem;
+      }
+
+      .section-title {
+        font-size: 1.875rem;
+      }
+
+      .cta-box h2 {
+        font-size: 1.875rem;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       NAVBAR
+       ========================================================================== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#" class="logo" aria-label="Aarya Technologies Home">
+        <div class="logo-icon">A</div>
+        <span>AARYA TECHNOLOGIES</span>
+      </a>
+
+      <div class="nav-menu" id="navMenu">
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#pricing" class="nav-link">Pricing</a></li>
+          <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+          <li><a href="#process" class="nav-link">Process</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-actions-mobile">
+          <a href="#pricing" class="btn btn-primary" style="width: 100%;">Get Started</a>
+        </div>
+      </div>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle Light/Dark Theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <a href="#pricing" class="btn btn-primary" style="display: none; @media (min-width: 992px) { display: inline-flex; }">Get Started</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO SECTION
+       ========================================================================== -->
+  <section class="hero" id="home">
+    <div class="hero-bg-glow"></div>
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <span class="badge">
+          <i class="fa-solid fa-bolt"></i> Premium Web Development Agency
+        </span>
+        <h1 class="hero-title">
+          We Build Premium <span class="gradient-text">Websites</span> That Build Your Business.
+        </h1>
+        <p class="hero-sub">
+          Modern, fast, SEO-optimized websites and Shopify stores designed to help your business stand out, attract high-value customers, and scale online effortlessly.
+        </p>
+        <div class="hero-cta-group">
+          <a href="#pricing" class="btn btn-primary">
+            Get Started <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="#portfolio" class="btn btn-secondary">
+            View Our Work
+          </a>
+        </div>
+        <div class="trust-line">
+          <span><i class="fa-solid fa-circle-check"></i> Fast</span>
+          <span><i class="fa-solid fa-circle-check"></i> Secure</span>
+          <span><i class="fa-solid fa-circle-check"></i> SEO Ready</span>
+          <span><i class="fa-solid fa-circle-check"></i> Mobile Friendly</span>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="mockup-laptop">
+          <div class="mockup-header">
+            <div class="dot dot-red"></div>
+            <div class="dot dot-yellow"></div>
+            <div class="dot dot-green"></div>
+          </div>
+          <div class="mockup-body">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <div class="mockup-skeleton" style="width: 30%;"></div>
+              <div style="display: flex; gap: 8px;">
+                <div class="mockup-skeleton" style="width: 40px;"></div>
+                <div class="mockup-skeleton" style="width: 40px;"></div>
+              </div>
+            </div>
+            <div class="mockup-skeleton" style="width: 70%; height: 28px; margin-bottom: 0.5rem;"></div>
+            <div class="mockup-skeleton" style="width: 90%; height: 12px;"></div>
+            <div class="mockup-skeleton" style="width: 80%; height: 12px;"></div>
+            <div style="margin-top: 1.5rem; display: flex; gap: 1rem;">
+              <div class="mockup-skeleton" style="width: 100px; height: 36px; border-radius: 20px;"></div>
+              <div class="mockup-skeleton" style="width: 100px; height: 36px; border-radius: 20px;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating UI Components -->
+        <div class="floating-card fc-analytics glass-card">
+          <div class="fc-icon" style="background: #10b981;"><i class="fa-solid fa-chart-line"></i></div>
+          <div>
+            <div style="font-size: 0.75rem; color: var(--text-muted);">Conversion Rate</div>
+            <div style="font-weight: 800; font-size: 1rem; color: var(--text-main);">+284% Growth</div>
+          </div>
+        </div>
+
+        <div class="floating-card fc-speed glass-card">
+          <div class="fc-icon" style="background: var(--primary);"><i class="fa-solid fa-gauge-high"></i></div>
+          <div>
+            <div style="font-size: 0.75rem; color: var(--text-muted);">Google PageSpeed</div>
+            <div style="font-weight: 800; font-size: 1rem; color: var(--text-main);">99 / 100 Score</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       STATS SECTION
+       ========================================================================== -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card glass-card">
+          <div class="stat-number" data-target="50">0</div>
+          <div class="stat-label">Projects Delivered</div>
+        </div>
+        <div class="stat-card glass-card">
+          <div class="stat-number" data-target="100">0</div>
+          <div class="stat-label">% Responsive Design</div>
+        </div>
+        <div class="stat-card glass-card">
+          <div class="stat-number" style="background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">SEO</div>
+          <div class="stat-label">Engine Optimized</div>
+        </div>
+        <div class="stat-card glass-card">
+          <div class="stat-number" style="background: linear-gradient(135deg, #7c3aed 0%, #2563eb 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">24/7</div>
+          <div class="stat-label">Dedicated Support</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SERVICES SECTION
+       ========================================================================== -->
+  <section class="section-padding" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Our Services</span>
+        <h2 class="section-title">Everything You Need to Grow Online</h2>
+        <p class="section-description">
+          From your first website to complete business automation, we build scalable digital solutions configured for growth.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card glass-card">
+          <div class="service-icon"><i class="fa-solid fa-code"></i></div>
+          <h3 class="service-title">Website Development</h3>
+          <p class="service-desc">Modern, pixel-perfect, and ultra-fast websites designed to convert visitors into loyal customers.</p>
+          <a href="#contact" class="service-link">Learn More <i class="fa-solid fa-chevron-right"></i></a>
+        </div>
+
+        <div class="service-card glass-card">
+          <div class="service-icon" style="background: var(--shopify-light); color: var(--shopify-green);"><i class="fa-bag-shopping"></i></div>
+          <h3 class="service-title">Shopify Development</h3>
+          <p class="service-desc">High-converting online stores built on Shopify with payment gateway integration and optimized checkout.</p>
+          <a href="#contact" class="service-link" style="color: var(--shopify-green);">Learn More <i class="fa-solid fa-chevron-right"></i></a>
+        </div>
+
+        <div class="service-card glass-card">
+          <div class="service-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+          <h3 class="service-title">SEO Optimization</h3>
+          <p class="service-desc">Rank higher on Google searches. Built-in technical SEO, structured data, and ultra-fast page load speeds.</p>
+          <a href="#contact" class="service-link">Learn More <i class="fa-solid fa-chevron-right"></i></a>
+        </div>
+
+        <div class="service-card glass-card">
+          <div class="service-icon"><i class="fa-solid fa-robot"></i></div>
+          <h3 class="service-title">Business Automation</h3>
+          <p class="service-desc">Streamline your business workflows, lead capture pipelines, CRM connections, and automated WhatsApp tools.</p>
+          <a href="#contact" class="service-link">Learn More <i class="fa-solid fa-chevron-right"></i></a>
+        </div>
+
+        <div class="service-card glass-card">
+          <div class="service-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+          <h3 class="service-title">UI/UX Design</h3>
+          <p class="service-desc">Clean, modern, aesthetic interfaces tailored specifically to match your brand identity and audience expectations.</p>
+          <a href="#contact" class="service-link">Learn More <i class="fa-solid fa-chevron-right"></i></a>
+        </div>
+
+        <div class="service-card glass-card">
+          <div class="service-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3 class="service-title">Website Maintenance</h3>
+          <p class="service-desc">Reliable website management, cloud updates, security patches, performance tuning, and lifetime support.</p>
+          <a href="#contact" class="service-link">Learn More <i class="fa-solid fa-chevron-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       PRICING SECTION
+       ========================================================================== -->
+  <section class="section-padding" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Transparent Pricing</span>
+        <h2 class="section-title">Premium Websites. Honest Pricing.</h2>
+        <p class="section-description">
+          Professional digital solutions designed for real growth without traditional agency-level markup.
+        </p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Plan 1 -->
+        <div class="pricing-card glass-card">
+          <h3 class="pricing-title">INFO WEBSITE</h3>
+          <div class="pricing-price">₹4,999</div>
+          <div class="pricing-period">One-Time Payment • Lifetime Access</div>
+          <ul class="pricing-features">
+            <li><i class="fa-solid fa-check"></i> Up to 5 Custom Pages</li>
+            <li><i class="fa-solid fa-check"></i> 100% Mobile Responsive</li>
+            <li><i class="fa-solid fa-check"></i> Technical SEO Setup</li>
+            <li><i class="fa-solid fa-check"></i> Ultra-Fast Loading</li>
+            <li><i class="fa-solid fa-check"></i> Dynamic Contact Form</li>
+            <li><i class="fa-solid fa-check"></i> Social Media Links</li>
+            <li><i class="fa-solid fa-check"></i> Lifetime Support</li>
+          </ul>
+          <a href="#contact" class="btn btn-secondary" style="width: 100%;">Get Started</a>
+        </div>
+
+        <!-- Plan 2 (Featured) -->
+        <div class="pricing-card glass-card featured">
+          <div class="popular-badge">MOST POPULAR</div>
+          <h3 class="pricing-title">BUSINESS WEBSITE</h3>
+          <div class="pricing-price">₹9,999</div>
+          <div class="pricing-period">One-Time Payment • Lifetime Access</div>
+          <ul class="pricing-features">
+            <li><i class="fa-solid fa-check"></i> Up to 10 Custom Pages</li>
+            <li><i class="fa-solid fa-check"></i> Bespoke UI/UX Design</li>
+            <li><i class="fa-solid fa-check"></i> Advanced SEO Optimization</li>
+            <li><i class="fa-solid fa-check"></i> Automation Integration</li>
+            <li><i class="fa-solid fa-check"></i> WhatsApp Direct Chatbot</li>
+            <li><i class="fa-solid fa-check"></i> Dynamic Blog/News Hub</li>
+            <li><i class="fa-solid fa-check"></i> Social Media Integration</li>
+            <li><i class="fa-solid fa-check"></i> Lifetime Support</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary" style="width: 100%;">Get Started</a>
+        </div>
+
+        <!-- Plan 3 -->
+        <div class="pricing-card glass-card">
+          <h3 class="pricing-title">SHOPIFY STORE</h3>
+          <div class="pricing-price">₹5,999</div>
+          <div class="pricing-period">Starting Package Price</div>
+          <div class="promo-tag">
+            <i class="fa-solid fa-gift"></i> PAID THEME WORTH ₹5,999–₹25,000 FREE
+          </div>
+          <ul class="pricing-features">
+            <li><i class="fa-solid fa-check"></i> Complete Shopify Setup</li>
+            <li><i class="fa-solid fa-check"></i> Initial Product Uploads</li>
+            <li><i class="fa-solid fa-check"></i> Payment Gateway Setup</li>
+            <li><i class="fa-solid fa-check"></i> Shipping Rate Configuration</li>
+            <li><i class="fa-solid fa-check"></i> E-commerce SEO Optimization</li>
+            <li><i class="fa-solid fa-check"></i> Mobile Checkout Ready</li>
+            <li><i class="fa-solid fa-check"></i> Conversion Rate Optimization</li>
+            <li><i class="fa-solid fa-check"></i> Lifetime Support</li>
+          </ul>
+          <a href="#contact" class="btn btn-shopify" style="width: 100%;">Build My Shopify Store</a>
+        </div>
+      </div>
+
+      <!-- SHOPIFY SPECIAL OFFER BANNER -->
+      <div class="shopify-banner">
+        <div class="shopify-banner-content">
+          <span class="shopify-badge"><i class="fa-solid fa-fire"></i> SPECIAL E-COMMERCE OFFER</span>
+          <h3>Launch Your Shopify Store With a Premium Theme — FREE</h3>
+          <p>Get a professionally engineered Shopify store built with a paid premium theme worth up to ₹25,000 included in your package at no extra cost.</p>
+          <div style="font-weight: 800; font-size: 1.25rem; margin-bottom: 1rem; color: var(--text-main);">
+            Starting at only ₹5,999
+          </div>
+        </div>
+        <div>
+          <a href="#contact" class="btn btn-shopify">Claim Shopify Offer</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       PORTFOLIO SECTION
+       ========================================================================== -->
+  <section class="section-padding" id="portfolio">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Our Work</span>
+        <h2 class="section-title">Our Work Speaks For Itself</h2>
+        <p class="section-description">
+          Explore a selection of digital experiences, business websites, and online stores engineered for our partners.
+        </p>
+      </div>
+
+      <div class="portfolio-grid">
+        <!-- Project 1 -->
+        <div class="portfolio-card glass-card">
+          <div class="portfolio-thumb">
+            <div style="font-size: 3rem; opacity: 0.15; color: var(--text-main); font-weight: 800;">E-COM</div>
+            <div class="portfolio-overlay">
+              <a href="#contact" class="btn btn-primary">Live Preview</a>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <div class="portfolio-category">Shopify / E-commerce</div>
+            <h3 class="portfolio-title">Aura Couture Apparel</h3>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="portfolio-card glass-card">
+          <div class="portfolio-thumb">
+            <div style="font-size: 3rem; opacity: 0.15; color: var(--text-main); font-weight: 800;">TECH</div>
+            <div class="portfolio-overlay">
+              <a href="#contact" class="btn btn-primary">Live Preview</a>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <div class="portfolio-category">Startup / Business</div>
+            <h3 class="portfolio-title">Apex Logistics Portal</h3>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="portfolio-card glass-card">
+          <div class="portfolio-thumb">
+            <div style="font-size: 3rem; opacity: 0.15; color: var(--text-main); font-weight: 800;">FOOD</div>
+            <div class="portfolio-overlay">
+              <a href="#contact" class="btn btn-primary">Live Preview</a>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <div class="portfolio-category">Restaurant / Hospitality</div>
+            <h3 class="portfolio-title">Saffron Fine Dining</h3>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="portfolio-card glass-card">
+          <div class="portfolio-thumb">
+            <div style="font-size: 3rem; opacity: 0.15; color: var(--text-main); font-weight: 800;">SAAS</div>
+            <div class="portfolio-overlay">
+              <a href="#contact" class="btn btn-primary">Live Preview</a>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <div class="portfolio-category">Business Automation</div>
+            <h3 class="portfolio-title">FinPulse Analytics</h3>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="portfolio-card glass-card">
+          <div class="portfolio-thumb">
+            <div style="font-size: 3rem; opacity: 0.15; color: var(--text-main); font-weight: 800;">PORTFOLIO</div>
+            <div class="portfolio-overlay">
+              <a href="#contact" class="btn btn-primary">Live Preview</a>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <div class="portfolio-category">Portfolio / Personal</div>
+            <h3 class="portfolio-title">Dr. Mehta Medical Practice</h3>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="portfolio-card glass-card">
+          <div class="portfolio-thumb">
+            <div style="font-size: 3rem; opacity: 0.15; color: var(--text-main); font-weight: 800;">ORGANIC</div>
+            <div class="portfolio-overlay">
+              <a href="#contact" class="btn btn-primary">Live Preview</a>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <div class="portfolio-category">Shopify / Organic</div>
+            <h3 class="portfolio-title">Verde Wellness Store</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       WHY CHOOSE US SECTION
+       ========================================================================== -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Why Aarya Technologies</span>
+        <h2 class="section-title">Engineered For Measurable Results</h2>
+        <p class="section-description">
+          We combine cutting-edge technology with conversion strategy to ensure your site performs cleanly.
+        </p>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="benefit-card glass-card">
+          <div class="benefit-icon"><i class="fa-solid fa-palette"></i></div>
+          <h3 class="benefit-title">Premium Design</h3>
+          <p class="benefit-desc">Tailored aesthetic identity that sets you apart from competitors instantly.</p>
+        </div>
+
+        <div class="benefit-card glass-card">
+          <div class="benefit-icon"><i class="fa-solid fa-bolt"></i></div>
+          <h3 class="benefit-title">Lightning Fast</h3>
+          <p class="benefit-desc">Optimized core web vitals for maximum retention and seamless experience.</p>
+        </div>
+
+        <div class="benefit-card glass-card">
+          <div class="benefit-icon"><i class="fa-solid fa-chart-pie"></i></div>
+          <h3 class="benefit-title">SEO Ready</h3>
+          <p class="benefit-desc">Proper schema markup, meta structures, and fast code to start ranking right away.</p>
+        </div>
+
+        <div class="benefit-card glass-card">
+          <div class="benefit-icon"><i class="fa-solid fa-bullseye"></i></div>
+          <h3 class="benefit-title">Business Focused</h3>
+          <p class="benefit-desc">Strategic lead generation CTAs built into every viewport to capture leads.</p>
+        </div>
+
+        <div class="benefit-card glass-card">
+          <div class="benefit-icon"><i class="fa-solid fa-headset"></i></div>
+          <h3 class="benefit-title">Lifetime Support</h3>
+          <p class="benefit-desc">We remain available as your ongoing digital partner long after deployment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       PROCESS SECTION
+       ========================================================================== -->
+  <section class="section-padding" id="process">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">How It Works</span>
+        <h2 class="section-title">From Idea to Launch — We Handle Everything</h2>
+        <p class="section-description">
+          A predictable, transparent step-by-step roadmap designed to get your business live cleanly.
+        </p>
+      </div>
+
+      <div class="process-timeline">
+        <div class="process-step glass-card">
+          <div class="step-number">01</div>
+          <h3 class="step-title">Consultation</h3>
+          <p class="step-desc">We align on your brand requirements, audience targets, and commercial goals.</p>
+        </div>
+
+        <div class="process-step glass-card">
+          <div class="step-number">02</div>
+          <h3 class="step-title">Strategy & Design</h3>
+          <p class="step-desc">We map the site architecture, create UI layouts, and organize your core content.</p>
+        </div>
+
+        <div class="process-step glass-card">
+          <div class="step-number">03</div>
+          <h3 class="step-title">Development</h3>
+          <p class="step-desc">We build your site with clean code for maximum speed, security, and mobile response.</p>
+        </div>
+
+        <div class="process-step glass-card">
+          <div class="step-number">04</div>
+          <h3 class="step-title">SEO & Audit</h3>
+          <p class="step-desc">We configure meta structure, speed parameters, and search engine readiness.</p>
+        </div>
+
+        <div class="process-step glass-card">
+          <div class="step-number">05</div>
+          <h3 class="step-title">Launch</h3>
+          <p class="step-desc">We connect your domain, test security certificates, and launch your site live online.</p>
+        </div>
+
+        <div class="process-step glass-card">
+          <div class="step-number">06</div>
+          <h3 class="step-title">Support</h3>
+          <p class="step-desc">Ongoing updates, adjustments, and tech assistance to keep things operating smoothly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       TESTIMONIALS SECTION
+       ========================================================================== -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Client Success Stories</span>
+        <h2 class="section-title">Trusted By Growing Businesses</h2>
+        <p class="section-description">
+          Read what our partners say about working with Aarya Technologies.
+        </p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card glass-card">
+          <div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-text">"Professional design, fast delivery and excellent support. Aarya Technologies gave our retail business the exact online presence and e-commerce channel we needed to expand."</p>
+          </div>
+          <div class="client-info">
+            <div class="client-avatar">RK</div>
+            <div class="client-details">
+              <h4>Rajesh Kumar</h4>
+              <p>Founder, Apex Retailers</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card glass-card">
+          <div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-text">"Our Shopify store went live smoothly with a premium theme setup included. Conversions picked up in the very first month. Highly recommended team!"</p>
+          </div>
+          <div class="client-info">
+            <div class="client-avatar">PS</div>
+            <div class="client-details">
+              <h4>Priya Sharma</h4>
+              <p>Co-Founder, Aura Organics</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card glass-card">
+          <div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-text">"The website speed and SEO setup helped us rank locally faster than expected. Their lifetime support team is always available whenever we need an update."</p>
+          </div>
+          <div class="client-info">
+            <div class="client-avatar">AM</div>
+            <div class="client-details">
+              <h4>Amit Mehta</h4>
+              <p>Director, Mehta Medical Supplies</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FAQ SECTION
+       ========================================================================== -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">FAQ</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-description">
+          Got questions? We have answers. If you don't find what you need, reach out to us directly.
+        </p>
+      </div>
+
+      <div class="faq-container">
+        <div class="faq-item">
+          <button class="faq-button">
+            <span>How long does it take to build a website?</span>
+            <i class="fa-solid fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            Standard business websites take between 3 to 7 business days to complete. Complete Shopify stores typically launch within 5 to 10 days depending on catalog size and requirements.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-button">
+            <span>Do you provide domain and hosting?</span>
+            <i class="fa-solid fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            We guide you through purchasing your domain and hosting so that you maintain 100% full ownership. We also offer managed setup and configuration included in our development packages.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-button">
+            <span>Is SEO included in the development packages?</span>
+            <i class="fa-solid fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            Yes! All websites built by Aarya Technologies come with technical SEO fundamentals included—such as meta structure, mobile layout compliance, fast image formatting, and XML sitemaps.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-button">
+            <span>Can you build custom Shopify stores?</span>
+            <i class="fa-solid fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            Absolutely. We specialize in Shopify design, payment gateway connections, theme customization, product uploads, shipping setups, and conversion optimization.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-button">
+            <span>Do you provide ongoing website maintenance?</span>
+            <i class="fa-solid fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            Yes, we provide ongoing support, lifetime assistance for minor updates, security monitoring, and custom long-term maintenance arrangements according to your growth needs.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-button">
+            <span>How do I start my project with Aarya Technologies?</span>
+            <i class="fa-solid fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            Simply select a pricing plan, message us directly via WhatsApp, or submit your project details using our contact section below. We will connect with you within 2 hours!
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CTA SECTION
+       ========================================================================== -->
+  <section class="section-padding" id="contact">
+    <div class="container">
+      <div class="cta-box">
+        <h2>Ready to Take Your Business Online?</h2>
+        <p>Let's build a website that doesn't just look good — it delivers real business results, attracts clients, and scales with you.</p>
+        <div class="cta-buttons">
+          <a href="https://wa.me/919876543210?text=Hi%20Aarya%20Technologies,%20I%20want%20to%20start%20a%20website%20project." target="_blank" class="btn btn-primary">
+            Start Your Project <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="https://wa.me/919876543210?text=Hi%20Aarya%20Technologies,%20I%20have%20a%20query." target="_blank" class="btn btn-secondary" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.3); color: #fff;">
+            <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <div class="logo-icon">A</div>
+            <span>AARYA TECHNOLOGIES</span>
+          </a>
+          <p>Premium websites, Shopify stores, SEO and automation solutions engineered for modern businesses and startups.</p>
+          <div class="social-links">
+            <a href="#" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="social-icon" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Services</h4>
+          <div class="footer-links">
+            <a href="#services">Website Development</a>
+            <a href="#services">Shopify Store Setup</a>
+            <a href="#services">SEO Optimization</a>
+            <a href="#services">Business Automation</a>
+            <a href="#services">UI/UX Design</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#portfolio">Our Portfolio</a>
+            <a href="#pricing">Pricing Plans</a>
+            <a href="#process">Our Process</a>
+            <a href="#contact">Get in Touch</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <div class="footer-links">
+            <a href="https://wa.me/919876543210" target="_blank"><i class="fa-brands fa-whatsapp"></i> +91 98765 43210</a>
+            <a href="mailto:contact@aaryatechnologies.com"><i class="fa-regular fa-envelope"></i> contact@aaryatechnologies.com</a>
+            <a href="#"><i class="fa-solid fa-location-dot"></i> Maharashtra, India</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Aarya Technologies. All Rights Reserved.</div>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Quick Actions -->
+  <div class="floating-actions">
+    <a href="https://wa.me/919876543210?text=Hi%20Aarya%20Technologies" class="float-btn float-whatsapp" target="_blank" aria-label="Chat on WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <button class="float-btn float-top" id="scrollTop" aria-label="Scroll to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+  </div>
+
+  <!-- ==========================================================================
+       VANILLA JAVASCRIPT LOGIC
+       ========================================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      // --- Theme Persistence (Dark / Light Mode) ---
+      const themeToggleBtn = document.getElementById('themeToggle');
+      const icon = themeToggleBtn.querySelector('i');
+      const savedTheme = localStorage.getItem('aarya_theme') || 'dark';
+
+      function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        if (theme === 'light') {
+          icon.className = 'fa-solid fa-sun';
+        } else {
+          icon.className = 'fa-solid fa-moon';
+        }
+        localStorage.setItem('aarya_theme', theme);
+      }
+
+      applyTheme(savedTheme);
+
+      themeToggleBtn.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const nextTheme = currentTheme === 'light' ? 'dark' : 'light';
+        applyTheme(nextTheme);
+      });
+
+      // --- Navbar Scroll Effect & Scroll-spy ---
+      const navbar = document.getElementById('navbar');
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-link');
+      const scrollTopBtn = document.getElementById('scrollTop');
+
+      window.addEventListener('scroll', () => {
+        const scrollY = window.pageYOffset;
+
+        // Sticky Navbar state
+        if (scrollY > 50) {
+          navbar.classList.add('scrolled');
+          scrollTopBtn.classList.add('visible');
+        } else {
+          navbar.classList.remove('scrolled');
+          scrollTopBtn.classList.remove('visible');
+        }
+
+        // Active link scroll spy logic
+        sections.forEach(current => {
+          const sectionHeight = current.offsetHeight;
+          const sectionTop = current.offsetTop - 100;
+          const sectionId = current.getAttribute('id');
+
+          if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            navLinks.forEach(link => {
+              link.classList.remove('active');
+              if (link.getAttribute('href') === '#' + sectionId) {
+                link.classList.add('active');
+              }
+            });
+          }
+        });
+      });
+
+      // --- Back to Top Smooth Scroll ---
+      scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // --- Mobile Navigation Drawer ---
+      const hamburger = document.getElementById('hamburger');
+      const navMenu = document.getElementById('navMenu');
+
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      });
+
+      // Close menu when clicking nav link
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          hamburger.classList.remove('active');
+          navMenu.classList.remove('active');
+        });
+      });
+
+      // --- Interactive Accordion (FAQ) ---
+      const faqItems = document.querySelectorAll('.faq-item');
+
+      faqItems.forEach(item => {
+        const btn = item.querySelector('.faq-button');
+        btn.addEventListener('click', () => {
+          const isActive = item.classList.contains('active');
+          
+          // Close all FAQ items
+          faqItems.forEach(i => i.classList.remove('active'));
+
+          // Toggle clicked item
+          if (!isActive) {
+            item.classList.add('active');
+          }
+        });
+      });
+
+      // --- Dynamic Stats Counter Animation ---
+      const statNumbers = document.querySelectorAll('.stat-number[data-target]');
+      let animated = false;
+
+      function triggerStatsAnimation() {
+        const statsSection = document.querySelector('.stats-grid');
+        if (!statsSection) return;
+
+        const rect = statsSection.getBoundingClientRect();
+        if (rect.top <= window.innerHeight && !animated) {
+          animated = true;
+          statNumbers.forEach(stat => {
+            const target = +stat.getAttribute('data-target');
+            const duration = 1500;
+            const increment = target / (duration / 16);
+
+            let current = 0;
+            const updateCount = () => {
+              current += increment;
+              if (current < target) {
+                stat.innerText = Math.ceil(current) + '+';
+                requestAnimationFrame(updateCount);
+              } else {
+                stat.innerText = target + (target === 100 ? '%' : '+');
+              }
+            };
+            updateCount();
+          });
+        }
+      }
+
+      window.addEventListener('scroll', triggerStatsAnimation);
+      triggerStatsAnimation(); // Initial check
+    });
+  </script>
+</body>
+</html>
