@@ -1892,5 +1892,48 @@
       }
     });
   </script>
+
+  <script>
+document.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+});
+
+document.addEventListener("keydown", function (e) {
+    // Disable F12
+    if (e.key === "F12") {
+        e.preventDefault();
+        return false;
+    }
+
+    // Disable Ctrl / Cmd shortcuts
+    if (e.ctrlKey || e.metaKey) {
+        const blockedKeys = [
+            "u", "s", "p", "c", "x", "v", "a",
+            "i", "j", "k", "f"
+        ];
+
+        if (blockedKeys.includes(e.key.toLowerCase())) {
+            e.preventDefault();
+            return false;
+        }
+    }
+
+    // Disable Ctrl + Shift + I / J / C
+    if ((e.ctrlKey || e.metaKey) && e.shiftKey) {
+        if (["i", "j", "c"].includes(e.key.toLowerCase())) {
+            e.preventDefault();
+            return false;
+        }
+    }
+});
+
+// Prevent dragging images
+document.addEventListener("dragstart", function (e) {
+    if (e.target.tagName === "IMG") {
+        e.preventDefault();
+    }
+});
+</script>
+  
 </body>
 </html>
