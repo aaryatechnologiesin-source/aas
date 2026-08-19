@@ -1,0 +1,1809 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Aarya Technologies | Pricing</title>
+  <meta name="description" content="Premium website, Shopify and automation pricing by Aarya Technologies. Flexible digital solutions tailored to your business goals.">
+  <meta name="keywords" content="Aarya Technologies, Pricing, Web Design Pricing, Shopify Pricing, Business Website Cost">
+  <meta name="author" content="Aarya Technologies">
+  <link rel="canonical" href="https://aaryatechnologies.com/pricing.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aaryatechnologies.com/pricing.html">
+  <meta property="og:title" content="Aarya Technologies | Pricing">
+  <meta property="og:description" content="Premium website, Shopify and automation pricing by Aarya Technologies.">
+  <meta property="og:image" content="https://aaryatechnologies.com/og-image.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://aaryatechnologies.com/pricing.html">
+  <meta property="twitter:title" content="Aarya Technologies | Pricing">
+  <meta property="twitter:description" content="Premium website, Shopify and automation pricing by Aarya Technologies.">
+  <meta property="twitter:image" content="https://aaryatechnologies.com/og-image.jpg">
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Aarya Technologies",
+    "url": "https://aaryatechnologies.com",
+    "logo": "https://aaryatechnologies.com/logo.png"
+  }
+  </script>
+
+  <style>
+    /* ==========================================================================
+       01. DESIGN SYSTEM & CSS VARIABLES
+       ========================================================================== */
+    :root {
+      --bg-main: #F8F7F3;
+      --bg-white: #FFFFFF;
+      --bg-ivory: #F1EFE9;
+      --text-primary: #171717;
+      --text-secondary: #66635D;
+      --border-color: #DFDCD4;
+      --border-light: #ECEAE3;
+      --champagne: #C6A66B;
+      --champagne-light: #E8DFCE;
+      --champagne-glow: rgba(198, 166, 107, 0.15);
+      --soft-gold: #B89A64;
+      --subtle-sage: #AAB69A;
+      
+      --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --transition-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-fast: cubic-bezier(0.25, 1, 0.5, 1);
+      
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      
+      --nav-height: 80px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+      background-color: var(--bg-main);
+      color: var(--text-primary);
+      font-family: var(--font-main);
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    body {
+      overflow-x: hidden;
+      position: relative;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background-color: var(--bg-main);
+      width: 100%;
+    }
+
+    body.scroll-locked {
+      overflow: hidden !important;
+      touch-action: none;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.3s var(--transition-fast);
+    }
+
+    button {
+      font-family: inherit;
+      border: none;
+      background: none;
+      cursor: pointer;
+      color: inherit;
+    }
+
+    img, svg {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+
+    ::selection {
+      background-color: var(--champagne-light);
+      color: var(--text-primary);
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--champagne);
+      outline-offset: 4px;
+    }
+
+    /* ==========================================================================
+       02. CANVAS & ANIMATED BACKGROUND
+       ========================================================================== */
+    #bg-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .scanline-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+      background: linear-gradient(rgba(248, 247, 243, 0) 50%, rgba(223, 220, 212, 0.08) 50%);
+      background-size: 100% 4px;
+      opacity: 0.6;
+    }
+
+    .cursor-glow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 400px;
+      height: 400px;
+      margin-left: -200px;
+      margin-top: -200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(198, 166, 107, 0.08) 0%, rgba(248, 247, 243, 0) 70%);
+      pointer-events: none;
+      z-index: 1;
+      transition: transform 0.15s ease-out;
+      will-change: transform;
+    }
+
+    .site-wrapper {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        padding: 0 40px;
+      }
+    }
+
+    /* ==========================================================================
+       03. NAVBAR
+       ========================================================================== */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: var(--nav-height);
+      z-index: 100;
+      transition: background-color 0.4s var(--transition-smooth), border-color 0.4s var(--transition-smooth);
+      padding: 16px 0;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 0 24px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .logo span {
+      color: var(--champagne);
+      font-size: 0.9em;
+    }
+
+    .nav-menu {
+      display: none;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    @media (min-width: 992px) {
+      .nav-menu {
+        display: flex;
+      }
+    }
+
+    .nav-link {
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      position: relative;
+      padding: 8px 0;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--text-primary);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background-color: var(--champagne);
+      transition: width 0.3s var(--transition-fast);
+    }
+
+    .nav-link.active::after,
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta-desktop {
+      display: none;
+    }
+
+    @media (min-width: 992px) {
+      .nav-cta-desktop {
+        display: inline-flex;
+      }
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background-color: var(--text-primary);
+      color: var(--bg-white);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 12px 24px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--text-primary);
+      transition: all 0.3s var(--transition-fast);
+      min-height: 44px;
+      white-space: nowrap;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--champagne);
+      border-color: var(--champagne);
+      color: var(--bg-white);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(198, 166, 107, 0.25);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background-color: transparent;
+      color: var(--text-primary);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 12px 24px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-color);
+      transition: all 0.3s var(--transition-fast);
+      min-height: 44px;
+      white-space: nowrap;
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--bg-ivory);
+      border-color: var(--text-primary);
+      transform: translateY(-2px);
+    }
+
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 18px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 102;
+    }
+
+    @media (min-width: 992px) {
+      .hamburger {
+        display: none;
+      }
+    }
+
+    .hamburger-line {
+      width: 100%;
+      height: 2px;
+      background-color: var(--text-primary);
+      transition: all 0.3s var(--transition-fast);
+      transform-origin: center;
+    }
+
+    .hamburger.active .hamburger-line:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .hamburger-line:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active .hamburger-line:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: var(--bg-main);
+      z-index: 101;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 40px 24px;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.4s var(--transition-smooth), visibility 0.4s var(--transition-smooth);
+    }
+
+    .mobile-menu.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .mobile-nav-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .mobile-nav-link {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+      display: inline-block;
+      min-height: 44px;
+    }
+
+    .mobile-nav-link.active {
+      color: var(--champagne);
+    }
+
+    /* ==========================================================================
+       04. HERO SECTION
+       ========================================================================== */
+    .hero {
+      position: relative;
+      padding-top: calc(var(--nav-height) + 60px);
+      padding-bottom: 80px;
+      overflow: hidden;
+    }
+
+    @media (min-width: 992px) {
+      .hero {
+        padding-top: calc(var(--nav-height) + 100px);
+        padding-bottom: 120px;
+      }
+    }
+
+    .hero-content {
+      max-width: 900px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--champagne);
+      margin-bottom: 20px;
+      background: var(--bg-white);
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid var(--border-light);
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 6vw, 4.8rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+      margin-bottom: 24px;
+      text-transform: uppercase;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+      font-weight: 400;
+      color: var(--text-secondary);
+      max-width: 650px;
+      margin-bottom: 36px;
+      line-height: 1.5;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    /* ==========================================================================
+       05. INTRO SECTION
+       ========================================================================== */
+    .intro-section {
+      padding: 60px 0;
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+      background-color: rgba(255, 255, 255, 0.4);
+      margin-bottom: 80px;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    @media (min-width: 768px) {
+      .intro-grid {
+        grid-template-columns: 1fr 2fr;
+        align-items: center;
+      }
+    }
+
+    .intro-heading {
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+
+    .intro-text {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* ==========================================================================
+       06 & 07. PRICING CARDS & GRID
+       ========================================================================== */
+    .pricing-section {
+      margin-bottom: 120px;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    @media (min-width: 992px) {
+      .pricing-grid {
+        grid-template-columns: repeat(3, 1fr);
+        align-items: stretch;
+      }
+    }
+
+    .pricing-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: transform 0.4s var(--transition-smooth), box-shadow 0.4s var(--transition-smooth), border-color 0.3s ease;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--champagne);
+      box-shadow: 0 20px 40px rgba(23, 23, 23, 0.05), 0 0 20px var(--champagne-glow);
+    }
+
+    .pricing-card.popular {
+      border: 2px solid var(--champagne);
+      background: linear-gradient(180deg, #FFFFFF 0%, #FAF8F3 100%);
+    }
+
+    .popular-badge {
+      position: absolute;
+      top: -14px;
+      right: 28px;
+      background: var(--champagne);
+      color: var(--bg-white);
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+
+    .plan-name {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .plan-best-for {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+      min-height: 40px;
+    }
+
+    .plan-price-wrapper {
+      margin-bottom: 28px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .plan-price {
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      color: var(--text-primary);
+    }
+
+    .plan-period {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--champagne);
+      margin-top: 6px;
+      display: block;
+    }
+
+    .plan-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 32px;
+      flex: 1;
+    }
+
+    .feature-item {
+      font-size: 0.92rem;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .feature-item .check {
+      color: var(--champagne);
+      font-weight: 800;
+    }
+
+    .special-highlight {
+      background: var(--bg-ivory);
+      border: 1px dashed var(--champagne);
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      margin-bottom: 24px;
+    }
+
+    .plan-disclaimer {
+      font-size: 0.72rem;
+      color: var(--text-secondary);
+      margin-top: 12px;
+      text-align: center;
+    }
+
+    .pricing-card .btn-primary,
+    .pricing-card .btn-secondary {
+      width: 100%;
+    }
+
+    /* ==========================================================================
+       08. COMPARISON TABLE
+       ========================================================================== */
+    .comparison-section {
+      margin-bottom: 120px;
+    }
+
+    .section-header {
+      margin-bottom: 48px;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+    }
+
+    /* Desktop Table */
+    .comparison-table-wrapper {
+      display: none;
+      background: var(--bg-white);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+    }
+
+    @media (min-width: 768px) {
+      .comparison-table-wrapper {
+        display: block;
+      }
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--border-light);
+      font-size: 0.95rem;
+    }
+
+    .comparison-table th {
+      background: var(--bg-ivory);
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      width: 25%;
+    }
+
+    .comparison-table th:first-child {
+      width: 25%;
+    }
+
+    .comparison-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .comparison-table td .check-icon {
+      color: var(--champagne);
+      font-weight: 800;
+    }
+
+    .comparison-table td .cross-icon {
+      color: var(--border-color);
+    }
+
+    /* Mobile Comparison Stack */
+    .mobile-comparison-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    @media (min-width: 768px) {
+      .mobile-comparison-stack {
+        display: none;
+      }
+    }
+
+    .mobile-comp-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 24px;
+    }
+
+    .mobile-comp-card h3 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-light);
+      color: var(--champagne);
+    }
+
+    .mobile-comp-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border-light);
+      font-size: 0.9rem;
+    }
+
+    .mobile-comp-row:last-child {
+      border-bottom: none;
+    }
+
+    .mobile-comp-label {
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    /* ==========================================================================
+       09. ADD-ONS SECTION
+       ========================================================================== */
+    .addons-section {
+      margin-bottom: 120px;
+    }
+
+    .addons-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    @media (min-width: 768px) {
+      .addons-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .addon-row {
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: border-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .addon-row:hover {
+      border-color: var(--champagne);
+      transform: translateX(4px);
+    }
+
+    .addon-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .addon-indicator {
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--champagne);
+      background: var(--bg-main);
+      padding: 6px 12px;
+      border-radius: 20px;
+    }
+
+    /* ==========================================================================
+       10. FAQ SECTION
+       ========================================================================== */
+    .faq-section {
+      margin-bottom: 120px;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      max-width: 900px;
+    }
+
+    .faq-item {
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: border-color 0.3s ease;
+    }
+
+    .faq-item.active {
+      border-color: var(--champagne);
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 24px;
+      text-align: left;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .faq-icon {
+      font-size: 1.2rem;
+      font-weight: 400;
+      transition: transform 0.3s ease;
+      color: var(--champagne);
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s var(--transition-smooth), padding 0.4s ease;
+      padding: 0 24px;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 200px;
+      padding-bottom: 24px;
+    }
+
+    /* ==========================================================================
+       11. PROCESS SECTION
+       ========================================================================== */
+    .process-section {
+      margin-bottom: 120px;
+    }
+
+    .process-flow {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      position: relative;
+    }
+
+    @media (min-width: 992px) {
+      .process-flow {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    .process-card {
+      flex: 1;
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      text-align: center;
+      position: relative;
+    }
+
+    .process-step-num {
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--champagne);
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .process-step-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .process-arrow {
+      display: none;
+      font-size: 1.2rem;
+      color: var(--champagne);
+    }
+
+    @media (min-width: 992px) {
+      .process-arrow {
+        display: block;
+      }
+    }
+
+    /* ==========================================================================
+       12. CTA SECTION
+       ========================================================================== */
+    .cta-section {
+      background: linear-gradient(135deg, #171717 0%, #2A2927 100%);
+      color: var(--bg-white);
+      border-radius: var(--radius-lg);
+      padding: 60px 32px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 100px;
+    }
+
+    @media (min-width: 768px) {
+      .cta-section {
+        padding: 90px 60px;
+      }
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .cta-title {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    .cta-text {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 36px;
+      line-height: 1.5;
+    }
+
+    .cta-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    .btn-champagne {
+      background: var(--champagne);
+      color: var(--bg-white);
+      border: 1px solid var(--champagne);
+    }
+
+    .btn-champagne:hover {
+      background: var(--soft-gold);
+      border-color: var(--soft-gold);
+      color: var(--bg-white);
+    }
+
+    .btn-outline-white {
+      background: transparent;
+      color: var(--bg-white);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .btn-outline-white:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--bg-white);
+    }
+
+    /* ==========================================================================
+       13. FOOTER
+       ========================================================================== */
+    .footer {
+      background-color: var(--bg-white);
+      border-top: 1px solid var(--border-color);
+      padding: 60px 0 30px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    @media (min-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 2fr 1fr;
+        align-items: center;
+      }
+    }
+
+    .footer-brand .logo {
+      margin-bottom: 12px;
+    }
+
+    .footer-subtitle {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      list-style: none;
+    }
+
+    @media (min-width: 768px) {
+      .footer-links {
+        justify-content: flex-end;
+      }
+    }
+
+    .footer-link {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    .footer-link:hover {
+      color: var(--text-primary);
+    }
+
+    .footer-bottom {
+      padding-top: 30px;
+      border-top: 1px solid var(--border-light);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+
+    @media (min-width: 768px) {
+      .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: 20px;
+    }
+
+    /* Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      #bg-canvas, .scanline-overlay, .cursor-glow {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Canvas Background -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="scanline-overlay" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <div class="site-wrapper">
+
+    <!-- Navbar -->
+    <header class="header">
+      <div class="container">
+        <div class="header-inner">
+          <a href="index.html" class="logo" aria-label="Aarya Technologies Home">
+            AARYA<span>®</span>
+          </a>
+
+          <nav aria-label="Main Navigation">
+            <ul class="nav-menu">
+              <li><a href="index.html" class="nav-link">Home</a></li>
+              <li><a href="services.html" class="nav-link">Services</a></li>
+              <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+              <li><a href="pricing.html" class="nav-link active" aria-current="page">Pricing</a></li>
+              <li><a href="about.html" class="nav-link">About</a></li>
+              <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+          </nav>
+
+          <a href="contact.html" class="btn-primary nav-cta-desktop">START A PROJECT ↗</a>
+
+          <button class="hamburger" id="hamburgerBtn" aria-label="Toggle Menu" aria-expanded="false">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <ul class="mobile-nav-list">
+        <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+        <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+        <li><a href="portfolio.html" class="mobile-nav-link">Portfolio</a></li>
+        <li><a href="pricing.html" class="mobile-nav-link active">Pricing</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About</a></li>
+        <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="btn-primary" style="width: 100%;">START A PROJECT ↗</a>
+    </div>
+
+    <main>
+      <!-- Hero -->
+      <section class="hero">
+        <div class="container">
+          <div class="hero-content">
+            <div class="eyebrow">04 / INVESTMENT</div>
+            <h1 class="hero-title">PREMIUM QUALITY.<br>HONEST PRICING.</h1>
+            <p class="hero-subtitle">Flexible website, Shopify and business solutions designed around your goals and budget.</p>
+            <div class="hero-cta-group">
+              <a href="#packages" class="btn-primary">VIEW PACKAGES ↓</a>
+              <a href="contact.html" class="btn-secondary">START A PROJECT ↗</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Intro -->
+      <section class="intro-section">
+        <div class="container">
+          <div class="intro-grid">
+            <h2 class="intro-heading">EVERY BUSINESS IS DIFFERENT.</h2>
+            <p class="intro-text">Choose a package that fits your current stage and grow whenever you're ready.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Pricing Blocks -->
+      <section class="pricing-section" id="packages">
+        <div class="container">
+          <div class="pricing-grid">
+
+            <!-- Card 1: Info Website -->
+            <article class="pricing-card">
+              <h3 class="plan-name">INFO WEBSITE</h3>
+              <p class="plan-best-for">Best for: Personal brands, Professionals, Small businesses</p>
+              
+              <div class="plan-price-wrapper">
+                <div class="plan-price">₹4,999</div>
+                <span class="plan-period">ONE-TIME INVESTMENT</span>
+              </div>
+
+              <ul class="plan-features">
+                <li class="feature-item"><span class="check">✓</span> Up to 5 pages</li>
+                <li class="feature-item"><span class="check">✓</span> Responsive design</li>
+                <li class="feature-item"><span class="check">✓</span> SEO optimized</li>
+                <li class="feature-item"><span class="check">✓</span> Contact form</li>
+                <li class="feature-item"><span class="check">✓</span> Social integration</li>
+                <li class="feature-item"><span class="check">✓</span> Fast loading</li>
+                <li class="feature-item"><span class="check">✓</span> WhatsApp button</li>
+                <li class="feature-item"><span class="check">✓</span> Lifetime support</li>
+              </ul>
+
+              <a href="contact.html?plan=info" class="btn-secondary">START WITH THIS ↗</a>
+            </article>
+
+            <!-- Card 2: Business Website (Popular) -->
+            <article class="pricing-card popular">
+              <span class="popular-badge">MOST POPULAR</span>
+              <h3 class="plan-name">BUSINESS WEBSITE</h3>
+              <p class="plan-best-for">Best for: Growing businesses, Service companies, Agencies</p>
+              
+              <div class="plan-price-wrapper">
+                <div class="plan-price">₹9,999</div>
+                <span class="plan-period">ONE-TIME INVESTMENT</span>
+              </div>
+
+              <ul class="plan-features">
+                <li class="feature-item"><span class="check">✓</span> Up to 10 pages</li>
+                <li class="feature-item"><span class="check">✓</span> Premium UI/UX</li>
+                <li class="feature-item"><span class="check">✓</span> SEO optimized</li>
+                <li class="feature-item"><span class="check">✓</span> WhatsApp integration</li>
+                <li class="feature-item"><span class="check">✓</span> Lead automation</li>
+                <li class="feature-item"><span class="check">✓</span> Analytics</li>
+                <li class="feature-item"><span class="check">✓</span> Premium sections</li>
+                <li class="feature-item"><span class="check">✓</span> Lifetime support</li>
+              </ul>
+
+              <a href="contact.html?plan=business" class="btn-primary">BUILD MY BUSINESS SITE ↗</a>
+            </article>
+
+            <!-- Card 3: Shopify Store -->
+            <article class="pricing-card">
+              <h3 class="plan-name">SHOPIFY STORE</h3>
+              <p class="plan-best-for">Best for: E-commerce, Brands, Online sellers</p>
+              
+              <div class="plan-price-wrapper">
+                <div class="plan-price">₹5,999+</div>
+                <span class="plan-period">ONE-TIME SETUP</span>
+              </div>
+
+              <div class="special-highlight">
+                PAID THEME VALUE UP TO ₹25,000 INCLUDED FREE
+              </div>
+
+              <ul class="plan-features">
+                <li class="feature-item"><span class="check">✓</span> Shopify setup</li>
+                <li class="feature-item"><span class="check">✓</span> Theme customization</li>
+                <li class="feature-item"><span class="check">✓</span> Products setup</li>
+                <li class="feature-item"><span class="check">✓</span> Payment gateway setup</li>
+                <li class="feature-item"><span class="check">✓</span> Shipping setup</li>
+                <li class="feature-item"><span class="check">✓</span> Mobile optimization</li>
+                <li class="feature-item"><span class="check">✓</span> SEO foundations</li>
+                <li class="feature-item"><span class="check">✓</span> Lifetime support</li>
+              </ul>
+
+              <a href="contact.html?plan=shopify" class="btn-secondary">BUILD MY STORE ↗</a>
+              <p class="plan-disclaimer">Theme availability depends on licensing and package.</p>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Comparison Table -->
+      <section class="comparison-section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">PACKAGE COMPARISON</h2>
+            <p class="section-subtitle">A detailed breakdown of features across all digital packages.</p>
+          </div>
+
+          <!-- Desktop Table Layout -->
+          <div class="comparison-table-wrapper">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>FEATURE</th>
+                  <th>INFO WEBSITE</th>
+                  <th>BUSINESS WEBSITE</th>
+                  <th>SHOPIFY STORE</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pages / Layout</td>
+                  <td>Up to 5 Pages</td>
+                  <td>Up to 10 Pages</td>
+                  <td>Custom Storefront</td>
+                </tr>
+                <tr>
+                  <td>SEO Optimization</td>
+                  <td><span class="check-icon">✓ Standard</span></td>
+                  <td><span class="check-icon">✓ Advanced</span></td>
+                  <td><span class="check-icon">✓ E-commerce SEO</span></td>
+                </tr>
+                <tr>
+                  <td>WhatsApp Integration</td>
+                  <td><span class="check-icon">✓ Direct Button</span></td>
+                  <td><span class="check-icon">✓ Automated Flow</span></td>
+                  <td><span class="check-icon">✓ Order Updates</span></td>
+                </tr>
+                <tr>
+                  <td>Automation Systems</td>
+                  <td><span class="cross-icon">—</span></td>
+                  <td><span class="check-icon">✓ Lead Capture</span></td>
+                  <td><span class="check-icon">✓ Abandoned Cart</span></td>
+                </tr>
+                <tr>
+                  <td>Analytics Integration</td>
+                  <td><span class="cross-icon">—</span></td>
+                  <td><span class="check-icon">✓ Google Analytics 4</span></td>
+                  <td><span class="check-icon">✓ Shopify Analytics</span></td>
+                </tr>
+                <tr>
+                  <td>Shopify Integration</td>
+                  <td><span class="cross-icon">—</span></td>
+                  <td><span class="cross-icon">—</span></td>
+                  <td><span class="check-icon">✓ Complete Engine</span></td>
+                </tr>
+                <tr>
+                  <td>Premium UI / UX</td>
+                  <td>Standard Clean</td>
+                  <td><span class="check-icon">✓ Editorial Bespoke</span></td>
+                  <td><span class="check-icon">✓ High Conversion</span></td>
+                </tr>
+                <tr>
+                  <td>Support Tier</td>
+                  <td>Lifetime Standard</td>
+                  <td>Lifetime Priority</td>
+                  <td>Lifetime Priority</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Mobile Stacked Layout -->
+          <div class="mobile-comparison-stack">
+            <div class="mobile-comp-card">
+              <h3>INFO WEBSITE</h3>
+              <div class="mobile-comp-row"><span class="mobile-comp-label">Pages</span><span>Up to 5</span></div>
+              <div class="mobile-comp-row"><span class="mobile-comp-label">SEO</span><span>Standard</span></div>
+              <div class="mobile-comp-row"><span class="mobile-comp-label">WhatsApp</span><span>Direct Button</span></div>
+              <div class="mobile-comp-row"><span class="mobile-comp-label">Automation</span><span>None</span></div>
+              <div class="mobile-comp-row"><span class="mobile-comp-label">Analytics</span><span>None</span></div>
+              <div class="mobile-comp-row"><span class="mobile-comp-label">Support</span><span>Lifetime</span></div>
+            </div>
+
+            <div class="mobile-comp-card">
+              <h3>BUSINESS WEBSITE</h3>
+              <div class="mobile-comp-row"><span class="mobile-comp-label">Pages</span><span>Up to 10</span></div>
+              <div class="mobile-comp-row"><span class="mobile-comp-label">SEO</span><span>Advanced</span></div>
+              <div class="mobile-comp-row"><span class="mobile-comp-label">WhatsApp</span><span>Automated Flow</span></div>
+              <div class="mobile-comp-row"><span class="mobile-comp-label">Automation</span><span>Lead Capture</span></div>
+              <div class="mobile-comp-row"><span class="mobile-comp-label">Analytics</span><span>GA4 Included</span></div>
+              <div class="mobile-comp-row"><span class="mobile-comp-label">Support</span><span>Priority Lifetime</span></div>
+            </div>
+
+            <div class="mobile-comp-card">
+              <h3>SHOPIFY STORE</h3>
+              <div class="mobile-comp-row"><span class="mobile-comp-label">Pages</span><span>Custom Store</span></div>
+              <div class="mobile-comp-row"><span class="mobile-comp-label">SEO</span><span>E-commerce</span></div>
+              <div class="mobile-comp-row"><span class="mobile-comp-label">WhatsApp</span><span>Order Alerts</span></div>
+              <div class="mobile-comp-row"><span class="mobile-comp-label">Automation</span><span>Cart Recovery</span></div>
+              <div class="mobile-comp-row"><span class="mobile-comp-label">Analytics</span><span>Shopify Engine</span></div>
+              <div class="mobile-comp-row"><span class="mobile-comp-label">Support</span><span>Priority Lifetime</span></div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Add-ons -->
+      <section class="addons-section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">EXTEND YOUR DIGITAL SYSTEM</h2>
+            <p class="section-subtitle">Tailored extensions to upgrade your site as your operations grow.</p>
+          </div>
+
+          <div class="addons-grid">
+            <div class="addon-row"><span class="addon-title">Extra Pages</span><span class="addon-indicator">AVAILABLE</span></div>
+            <div class="addon-row"><span class="addon-title">SEO Upgrade</span><span class="addon-indicator">AVAILABLE</span></div>
+            <div class="addon-row"><span class="addon-title">Blog System Integration</span><span class="addon-indicator">AVAILABLE</span></div>
+            <div class="addon-row"><span class="addon-title">Advanced Workflows & Automation</span><span class="addon-indicator">AVAILABLE</span></div>
+            <div class="addon-row"><span class="addon-title">Custom Lead Forms</span><span class="addon-indicator">AVAILABLE</span></div>
+            <div class="addon-row"><span class="addon-title">Premium WebGL / Motion Animations</span><span class="addon-indicator">AVAILABLE</span></div>
+            <div class="addon-row"><span class="addon-title">Maintenance & Security Plan</span><span class="addon-indicator">AVAILABLE</span></div>
+            <div class="addon-row"><span class="addon-title">Domain & Hosting Assistance</span><span class="addon-indicator">AVAILABLE</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="faq-section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">FREQUENTLY ASKED QUESTIONS</h2>
+          </div>
+
+          <div class="faq-list">
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>Which package is best for me?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                If you are a professional or small business looking for a clean web presence, the Info Website is ideal. If you require lead generation and custom sections, choose the Business Website. For selling products online, the Shopify package is built for you.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>Can I upgrade later?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                Yes. Our codebases are designed modularly. You can start with an Info Website and easily upgrade to full Business or Automation systems as your business expands.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>Do you provide hosting?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                We assist you in selecting and setting up high-performance, secure hosting. Hosting fees are paid directly to top infrastructure providers to ensure you maintain 100% ownership.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>Do you provide domains?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                We guide you through purchasing your custom .com, .in, or global domain directly under your own account for full security and ownership.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>What is lifetime support?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                Lifetime support covers technical bug fixes, general queries, and security updates related to the original code scope engineered by Aarya Technologies.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>Do you provide Shopify setup?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                Yes. We handle end-to-end Shopify setup including payment gateways, domain linking, catalog configuration, shipping rates, and theme customization.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>Can I request custom features?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                Absolutley. We build tailored digital systems. Mention your specific requirements during our discovery call and we will engineer a custom add-on.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>Do you offer ongoing maintenance?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                Yes, we offer monthly and annual maintenance packages to keep your platform optimized, secure, and updated with new content.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Process Section -->
+      <section class="process-section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">THE PATH TO LAUNCH</h2>
+          </div>
+
+          <div class="process-flow">
+            <div class="process-card">
+              <span class="process-step-num">STEP 01</span>
+              <h3 class="process-step-title">DISCOVER</h3>
+            </div>
+            <span class="process-arrow">→</span>
+            <div class="process-card">
+              <span class="process-step-num">STEP 02</span>
+              <h3 class="process-step-title">PLAN</h3>
+            </div>
+            <span class="process-arrow">→</span>
+            <div class="process-card">
+              <span class="process-step-num">STEP 03</span>
+              <h3 class="process-step-title">DESIGN</h3>
+            </div>
+            <span class="process-arrow">→</span>
+            <div class="process-card">
+              <span class="process-step-num">STEP 04</span>
+              <h3 class="process-step-title">DEVELOP</h3>
+            </div>
+            <span class="process-arrow">→</span>
+            <div class="process-card">
+              <span class="process-step-num">STEP 05</span>
+              <h3 class="process-step-title">LAUNCH</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Final CTA -->
+      <section class="cta-section">
+        <div class="container">
+          <div class="cta-content">
+            <h2 class="cta-title">LET'S BUILD YOUR DIGITAL PRESENCE.</h2>
+            <p class="cta-text">Tell us about your project and we'll recommend the right solution.</p>
+            <div class="cta-buttons">
+              <a href="contact.html" class="btn-primary btn-champagne">START A PROJECT ↗</a>
+              <a href="https://wa.me/" target="_blank" rel="noopener" class="btn-secondary btn-outline-white">WHATSAPP US ↗</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="logo">AARYA<span>®</span></a>
+            <p class="footer-subtitle">DIGITAL EXPERIENCES / WEB / SHOPIFY / AUTOMATION</p>
+          </div>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="services.html" class="footer-link">Services</a></li>
+            <li><a href="portfolio.html" class="footer-link">Portfolio</a></li>
+            <li><a href="pricing.html" class="footer-link">Pricing</a></li>
+            <li><a href="about.html" class="footer-link">About</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 Aarya Technologies. All Rights Reserved.</p>
+          <div class="footer-legal">
+            <a href="#" class="footer-link">Privacy Policy</a>
+            <a href="#" class="footer-link">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      'use strict';
+
+      /* ==========================================================================
+         01. CANVAS ANIMATED BACKGROUND
+         ========================================================================== */
+      const canvas = document.getElementById('bg-canvas');
+      const ctx = canvas.getContext('2d');
+      let width, height;
+      let particles = [];
+
+      function getParticleCount() {
+        const w = window.innerWidth;
+        if (w < 768) return 28;
+        if (w < 1024) return 50;
+        return 80;
+      }
+
+      function resizeCanvas() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      }
+
+      class Particle {
+        constructor() {
+          this.reset();
+        }
+
+        reset() {
+          this.x = Math.random() * width;
+          this.y = Math.random() * height;
+          this.vx = (Math.random() - 0.5) * 0.4;
+          this.vy = (Math.random() - 0.5) * 0.4;
+          this.radius = Math.random() * 1.8 + 0.6;
+          this.alpha = Math.random() * 0.4 + 0.1;
+        }
+
+        update() {
+          this.x += this.vx;
+          this.y += this.vy;
+
+          if (this.x < 0 || this.x > width) this.vx *= -1;
+          if (this.y < 0 || this.y > height) this.vy *= -1;
+        }
+
+        draw() {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(198, 166, 107, ${this.alpha})`;
+          ctx.fill();
+        }
+      }
+
+      function initCanvas() {
+        resizeCanvas();
+        particles = [];
+        const count = getParticleCount();
+        for (let i = 0; i < count; i++) {
+          particles.push(new Particle());
+        }
+      }
+
+      function drawConnections() {
+        const maxDist = 120;
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist < maxDist) {
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.strokeStyle = `rgba(223, 220, 212, ${1 - dist / maxDist})`;
+              ctx.lineWidth = 0.6;
+              ctx.stroke();
+            }
+          }
+        }
+      }
+
+      function animate() {
+        if (document.visibilityState === 'visible') {
+          ctx.clearRect(0, 0, width, height);
+          particles.forEach(p => {
+            p.update();
+            p.draw();
+          });
+          drawConnections();
+        }
+        requestAnimationFrame(animate);
+      }
+
+      window.addEventListener('resize', () => {
+        resizeCanvas();
+        initCanvas();
+      });
+
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      if (!prefersReducedMotion.matches) {
+        initCanvas();
+        animate();
+      }
+
+      /* ==========================================================================
+         02. CURSOR FOLLOW GLOW
+         ========================================================================== */
+      const cursorGlow = document.getElementById('cursorGlow');
+      if (window.innerWidth > 992 && cursorGlow) {
+        window.addEventListener('mousemove', (e) => {
+          cursorGlow.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+        }, { passive: true });
+      }
+
+      /* ==========================================================================
+         03. MOBILE MENU TOGGLE
+         ========================================================================== */
+      const hamburgerBtn = document.getElementById('hamburgerBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+      function toggleMobileMenu() {
+        const isOpen = mobileMenu.classList.contains('active');
+        if (isOpen) {
+          mobileMenu.classList.remove('active');
+          hamburgerBtn.classList.remove('active');
+          hamburgerBtn.setAttribute('aria-expanded', 'false');
+          mobileMenu.setAttribute('aria-hidden', 'true');
+          document.body.classList.remove('scroll-locked');
+        } else {
+          mobileMenu.classList.add('active');
+          hamburgerBtn.classList.add('active');
+          hamburgerBtn.setAttribute('aria-expanded', 'true');
+          mobileMenu.setAttribute('aria-hidden', 'false');
+          document.body.classList.add('scroll-locked');
+        }
+      }
+
+      hamburgerBtn.addEventListener('click', toggleMobileMenu);
+
+      mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (mobileMenu.classList.contains('active')) toggleMobileMenu();
+        });
+      });
+
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+          toggleMobileMenu();
+        }
+      });
+
+      /* ==========================================================================
+         04. FAQ ACCORDION INTERACTION
+         ========================================================================== */
+      const faqItems = document.querySelectorAll('.faq-item');
+
+      faqItems.forEach(item => {
+        const questionBtn = item.querySelector('.faq-question');
+        questionBtn.addEventListener('click', () => {
+          const isActive = item.classList.contains('active');
+          
+          faqItems.forEach(i => i.classList.remove('active'));
+
+          if (!isActive) {
+            item.classList.add('active');
+          }
+        });
+      });
+
+      /* ==========================================================================
+         05. RIGHT CLICK & SHORTCUT DETERRENT
+         ========================================================================== */
+      document.addEventListener('contextmenu', (e) => e.preventDefault());
+
+      document.addEventListener('keydown', (e) => {
+        const targetTag = e.target.tagName.toLowerCase();
+        if (['input', 'textarea', 'select'].includes(targetTag)) return;
+
+        const forbiddenKeys = ['u', 's', 'p', 'a', 'c', 'x', 'v', 'f'];
+        const isCmdOrCtrl = e.ctrlKey || e.metaKey;
+
+        if (e.key === 'F12' || (isCmdOrCtrl && e.shiftKey && ['I', 'J', 'C'].includes(e.key.toUpperCase()))) {
+          e.preventDefault();
+        }
+
+        if (isCmdOrCtrl && forbiddenKeys.includes(e.key.toLowerCase())) {
+          e.preventDefault();
+        }
+      });
+
+    });
+  </script>
+</body>
+</html>
