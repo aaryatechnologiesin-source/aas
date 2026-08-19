@@ -1,0 +1,2283 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Aarya Technologies | Portfolio — Premium Digital Experiences</title>
+  <meta name="description" content="Explore selected web design, Shopify, UI/UX, and digital technology projects engineered by Aarya Technologies.">
+  <meta name="keywords" content="Aarya Technologies, Portfolio, Web Design, Shopify Development, UI/UX Design, Automation">
+  <meta name="author" content="Aarya Technologies">
+  <link rel="canonical" href="https://aaryatechnologies.com/portfolio.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aaryatechnologies.com/portfolio.html">
+  <meta property="og:title" content="Aarya Technologies | Portfolio — Premium Digital Experiences">
+  <meta property="og:description" content="Explore selected web design, Shopify, UI/UX, and digital technology projects engineered by Aarya Technologies.">
+  <meta property="og:image" content="https://aaryatechnologies.com/og-image.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://aaryatechnologies.com/portfolio.html">
+  <meta property="twitter:title" content="Aarya Technologies | Portfolio — Premium Digital Experiences">
+  <meta property="twitter:description" content="Explore selected web design, Shopify, UI/UX, and digital technology projects engineered by Aarya Technologies.">
+  <meta property="twitter:image" content="https://aaryatechnologies.com/og-image.jpg">
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Structured Data (Schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Aarya Technologies",
+    "url": "https://aaryatechnologies.com",
+    "logo": "https://aaryatechnologies.com/logo.png",
+    "sameAs": [
+      "https://twitter.com/aaryatech",
+      "https://linkedin.com/company/aaryatech"
+    ]
+  }
+  </script>
+
+  <style>
+    /* ==========================================================================
+       01. DESIGN SYSTEM & CSS VARIABLES
+       ========================================================================== */
+    :root {
+      --bg-main: #F8F7F3;
+      --bg-white: #FFFFFF;
+      --bg-ivory: #F1EFE9;
+      --text-primary: #171717;
+      --text-secondary: #66635D;
+      --border-color: #DFDCD4;
+      --border-light: #ECEAE3;
+      --champagne: #C6A66B;
+      --champagne-light: #E8DFCE;
+      --champagne-glow: rgba(198, 166, 107, 0.15);
+      --soft-gold: #B89A64;
+      --subtle-sage: #AAB69A;
+      
+      --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --transition-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-fast: cubic-bezier(0.25, 1, 0.5, 1);
+      
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      
+      --nav-height: 80px;
+    }
+
+    /* Reset & Base Styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+      background-color: var(--bg-main);
+      color: var(--text-primary);
+      font-family: var(--font-main);
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    body {
+      overflow-x: hidden;
+      position: relative;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background-color: var(--bg-main);
+      width: 100%;
+    }
+
+    /* Lock Scroll when Modal/Nav is Open */
+    body.scroll-locked {
+      overflow: hidden !important;
+      touch-action: none;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.3s var(--transition-fast);
+    }
+
+    button {
+      font-family: inherit;
+      border: none;
+      background: none;
+      cursor: pointer;
+      color: inherit;
+    }
+
+    img, svg {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+
+    /* Selection */
+    ::selection {
+      background-color: var(--champagne-light);
+      color: var(--text-primary);
+    }
+
+    /* Custom Focus Outline */
+    :focus-visible {
+      outline: 2px solid var(--champagne);
+      outline-offset: 4px;
+    }
+
+    /* ==========================================================================
+       02. CANVAS & ANIMATED BACKGROUND
+       ========================================================================== */
+    #bg-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .scanline-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+      background: linear-gradient(rgba(248, 247, 243, 0) 50%, rgba(223, 220, 212, 0.08) 50%);
+      background-size: 100% 4px;
+      opacity: 0.6;
+    }
+
+    .cursor-glow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 400px;
+      height: 400px;
+      margin-left: -200px;
+      margin-top: -200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(198, 166, 107, 0.08) 0%, rgba(248, 247, 243, 0) 70%);
+      pointer-events: none;
+      z-index: 1;
+      transition: transform 0.15s ease-out;
+      will-change: transform;
+    }
+
+    /* Site Container */
+    .site-wrapper {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        padding: 0 40px;
+      }
+    }
+
+    /* ==========================================================================
+       03. NAVIGATION BAR
+       ========================================================================== */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: var(--nav-height);
+      z-index: 100;
+      transition: background-color 0.4s var(--transition-smooth), border-color 0.4s var(--transition-smooth), transform 0.4s var(--transition-smooth);
+      padding: 16px 0;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 0 24px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+      transition: all 0.3s var(--transition-fast);
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .logo span {
+      color: var(--champagne);
+      font-size: 0.9em;
+    }
+
+    .nav-menu {
+      display: none;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    @media (min-width: 992px) {
+      .nav-menu {
+        display: flex;
+      }
+    }
+
+    .nav-link {
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      position: relative;
+      padding: 8px 0;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--text-primary);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background-color: var(--champagne);
+      transition: width 0.3s var(--transition-fast);
+    }
+
+    .nav-link.active::after,
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta-desktop {
+      display: none;
+    }
+
+    @media (min-width: 992px) {
+      .nav-cta-desktop {
+        display: inline-flex;
+      }
+    }
+
+    /* Buttons */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background-color: var(--text-primary);
+      color: var(--bg-white);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 12px 24px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--text-primary);
+      transition: all 0.3s var(--transition-fast);
+      min-height: 44px;
+      white-space: nowrap;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--champagne);
+      border-color: var(--champagne);
+      color: var(--bg-white);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(198, 166, 107, 0.25);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background-color: transparent;
+      color: var(--text-primary);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 12px 24px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-color);
+      transition: all 0.3s var(--transition-fast);
+      min-height: 44px;
+      white-space: nowrap;
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--bg-ivory);
+      border-color: var(--text-primary);
+      transform: translateY(-2px);
+    }
+
+    /* Mobile Hamburger */
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 18px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 102;
+    }
+
+    @media (min-width: 992px) {
+      .hamburger {
+        display: none;
+      }
+    }
+
+    .hamburger-line {
+      width: 100%;
+      height: 2px;
+      background-color: var(--text-primary);
+      transition: all 0.3s var(--transition-fast);
+      transform-origin: center;
+    }
+
+    .hamburger.active .hamburger-line:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .hamburger-line:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active .hamburger-line:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Mobile Menu Drawer */
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: var(--bg-main);
+      z-index: 101;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 40px 24px;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.4s var(--transition-smooth), visibility 0.4s var(--transition-smooth);
+    }
+
+    .mobile-menu.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .mobile-nav-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .mobile-nav-link {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+      display: inline-block;
+      min-height: 44px;
+    }
+
+    .mobile-nav-link.active {
+      color: var(--champagne);
+    }
+
+    /* ==========================================================================
+       04. HERO SECTION
+       ========================================================================== */
+    .hero {
+      position: relative;
+      padding-top: calc(var(--nav-height) + 60px);
+      padding-bottom: 80px;
+      overflow: hidden;
+    }
+
+    @media (min-width: 992px) {
+      .hero {
+        padding-top: calc(var(--nav-height) + 100px);
+        padding-bottom: 120px;
+      }
+    }
+
+    .hero-content {
+      max-width: 900px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--champagne);
+      margin-bottom: 20px;
+      background: var(--bg-white);
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid var(--border-light);
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 6vw, 4.8rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+      margin-bottom: 24px;
+      text-transform: uppercase;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+      font-weight: 400;
+      color: var(--text-secondary);
+      max-width: 650px;
+      margin-bottom: 36px;
+      line-height: 1.5;
+    }
+
+    /* Hero Technical Visual Composition */
+    .hero-visual-bg {
+      position: absolute;
+      top: 20%;
+      right: -5%;
+      width: 550px;
+      height: 550px;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.85;
+      display: none;
+    }
+
+    @media (min-width: 992px) {
+      .hero-visual-bg {
+        display: block;
+      }
+    }
+
+    .hero-ui-panel {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03);
+      animation: floatPanel 8s ease-in-out infinite alternate;
+    }
+
+    .hero-ui-panel-1 {
+      top: 40px;
+      right: 80px;
+      width: 220px;
+    }
+
+    .hero-ui-panel-2 {
+      bottom: 80px;
+      right: 200px;
+      width: 260px;
+      animation-delay: -4s;
+    }
+
+    @keyframes floatPanel {
+      0% { transform: translateY(0px) rotate(0deg); }
+      100% { transform: translateY(-18px) rotate(1deg); }
+    }
+
+    /* ==========================================================================
+       05. PORTFOLIO INTRO SECTION
+       ========================================================================== */
+    .intro-section {
+      padding: 60px 0;
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+      background-color: rgba(255, 255, 255, 0.4);
+      margin-bottom: 60px;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    @media (min-width: 768px) {
+      .intro-grid {
+        grid-template-columns: 280px 1fr;
+        align-items: start;
+      }
+    }
+
+    .intro-label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .intro-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background-color: var(--border-color);
+    }
+
+    .intro-heading {
+      font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+
+    .intro-text {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      max-width: 800px;
+      line-height: 1.6;
+    }
+
+    .animated-line {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, var(--champagne) 0%, rgba(198, 166, 107, 0) 100%);
+      margin-top: 24px;
+    }
+
+    /* ==========================================================================
+       06. FILTER NAVIGATION
+       ========================================================================== */
+    .filter-wrapper {
+      margin-bottom: 50px;
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none;  /* IE and Edge */
+      padding-bottom: 8px;
+    }
+
+    .filter-wrapper::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera */
+    }
+
+    .filter-nav {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      min-width: max-content;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 12px;
+    }
+
+    .filter-btn {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      padding: 10px 18px;
+      border-radius: 30px;
+      background: transparent;
+      transition: all 0.3s var(--transition-fast);
+      position: relative;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .filter-btn:hover {
+      color: var(--text-primary);
+      background-color: var(--bg-ivory);
+    }
+
+    .filter-btn.active {
+      color: var(--text-primary);
+      background-color: var(--bg-white);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+    }
+
+    .filter-btn.active::after {
+      content: '';
+      position: absolute;
+      bottom: -13px;
+      left: 15%;
+      width: 70%;
+      height: 2px;
+      background-color: var(--champagne);
+    }
+
+    /* ==========================================================================
+       07. PORTFOLIO GALLERY (ASYMMETRIC GRID)
+       ========================================================================== */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      margin-bottom: 100px;
+    }
+
+    @media (min-width: 992px) {
+      .portfolio-grid {
+        grid-template-columns: repeat(12, 1fr);
+        gap: 48px 32px;
+      }
+
+      /* Editorial Asymmetric Span Mapping */
+      .project-card:nth-child(6n+1) { grid-column: span 12; }
+      .project-card:nth-child(6n+2) { grid-column: span 7; }
+      .project-card:nth-child(6n+3) { grid-column: span 5; }
+      .project-card:nth-child(6n+4) { grid-column: span 12; }
+      .project-card:nth-child(6n+5) { grid-column: span 5; }
+      .project-card:nth-child(6n+6) { grid-column: span 7; }
+    }
+
+    /* Project Card */
+    .project-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.5s var(--transition-smooth), box-shadow 0.5s var(--transition-smooth), border-color 0.3s ease, opacity 0.4s ease;
+      position: relative;
+      cursor: pointer;
+      opacity: 1;
+    }
+
+    .project-card.is-hidden {
+      display: none !important;
+      opacity: 0;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--champagne);
+      box-shadow: 0 20px 40px rgba(23, 23, 23, 0.06), 0 0 20px var(--champagne-glow);
+    }
+
+    /* Project Visual Container */
+    .project-visual {
+      position: relative;
+      width: 100%;
+      height: 320px;
+      background-color: var(--bg-ivory);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    @media (min-width: 992px) {
+      .project-card:nth-child(6n+1) .project-visual,
+      .project-card:nth-child(6n+4) .project-visual {
+        height: 480px;
+      }
+    }
+
+    /* Abstract Vector UI Mockups inside Cards */
+    .mockup-container {
+      width: 85%;
+      height: 80%;
+      background: #FFFFFF;
+      border-radius: 6px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.6s var(--transition-smooth);
+    }
+
+    .project-card:hover .mockup-container {
+      transform: scale(1.03);
+    }
+
+    .mockup-header {
+      height: 28px;
+      background: #F1EFE9;
+      border-bottom: 1px solid var(--border-light);
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+      gap: 6px;
+    }
+
+    .mockup-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #DFDCD4;
+    }
+
+    .mockup-body {
+      flex: 1;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      background: #FAF9F6;
+      position: relative;
+    }
+
+    /* Card Details Content */
+    .project-info {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .project-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .project-num {
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      color: var(--champagne);
+    }
+
+    .project-cat {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      background: var(--bg-main);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    .project-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+      transition: color 0.3s ease;
+    }
+
+    .project-card:hover .project-title {
+      color: var(--champagne);
+    }
+
+    .project-desc {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+      line-height: 1.5;
+      flex: 1;
+    }
+
+    .project-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 16px;
+      border-top: 1px solid var(--border-light);
+    }
+
+    .project-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: var(--text-secondary);
+    }
+
+    .project-link {
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.3s var(--transition-fast);
+    }
+
+    .project-card:hover .project-link {
+      gap: 10px;
+      color: var(--champagne);
+    }
+
+    /* ==========================================================================
+       08. FEATURED PROJECT HIGHLIGHT
+       ========================================================================== */
+    .featured-section {
+      margin-bottom: 100px;
+    }
+
+    .featured-card {
+      background: linear-gradient(135deg, #FFFFFF 0%, #F1EFE9 100%);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    @media (min-width: 992px) {
+      .featured-card {
+        grid-template-columns: 1.1fr 0.9fr;
+        padding: 60px;
+      }
+    }
+
+    .featured-content {
+      order: 2;
+    }
+
+    @media (min-width: 992px) {
+      .featured-content {
+        order: 1;
+      }
+    }
+
+    .featured-visual {
+      order: 1;
+      width: 100%;
+      height: 340px;
+      background: #FFFFFF;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-light);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+      overflow: hidden;
+      position: relative;
+    }
+
+    @media (min-width: 992px) {
+      .featured-visual {
+        order: 2;
+        height: 420px;
+      }
+    }
+
+    .featured-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      line-height: 1.1;
+    }
+
+    .featured-desc {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+
+    .descriptors-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .descriptor-pill {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      background: rgba(198, 166, 107, 0.12);
+      color: var(--champagne);
+      border-radius: 20px;
+      border: 1px solid rgba(198, 166, 107, 0.25);
+    }
+
+    /* ==========================================================================
+       09. TECHNOLOGY SECTION
+       ========================================================================== */
+    .tech-section {
+      padding: 80px 0;
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+      background: rgba(255, 255, 255, 0.5);
+      margin-bottom: 100px;
+      text-align: center;
+    }
+
+    .tech-title {
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--champagne);
+      margin-bottom: 40px;
+    }
+
+    .tech-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 24px 48px;
+    }
+
+    .tech-item {
+      font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+      opacity: 0.7;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .tech-item:hover {
+      opacity: 1;
+      color: var(--champagne);
+      transform: translateY(-2px);
+    }
+
+    /* ==========================================================================
+       10. PROCESS SECTION
+       ========================================================================== */
+    .process-section {
+      margin-bottom: 120px;
+    }
+
+    .section-header {
+      margin-bottom: 60px;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+    }
+
+    .process-timeline {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      position: relative;
+    }
+
+    @media (min-width: 992px) {
+      .process-timeline {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 16px;
+      }
+    }
+
+    .process-step {
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      position: relative;
+      transition: transform 0.3s var(--transition-fast), border-color 0.3s ease;
+    }
+
+    .process-step:hover {
+      transform: translateY(-4px);
+      border-color: var(--champagne);
+    }
+
+    .step-num {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--champagne);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .step-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .step-desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+
+    /* ==========================================================================
+       11. CTA SECTION
+       ========================================================================== */
+    .cta-section {
+      background: linear-gradient(135deg, #171717 0%, #2A2927 100%);
+      color: var(--bg-white);
+      border-radius: var(--radius-lg);
+      padding: 60px 32px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 100px;
+    }
+
+    @media (min-width: 768px) {
+      .cta-section {
+        padding: 90px 60px;
+      }
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .cta-title {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    .cta-text {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 36px;
+      line-height: 1.5;
+    }
+
+    .cta-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    .btn-champagne {
+      background: var(--champagne);
+      color: var(--bg-white);
+      border: 1px solid var(--champagne);
+    }
+
+    .btn-champagne:hover {
+      background: var(--soft-gold);
+      border-color: var(--soft-gold);
+      color: var(--bg-white);
+    }
+
+    .btn-outline-white {
+      background: transparent;
+      color: var(--bg-white);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .btn-outline-white:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--bg-white);
+    }
+
+    /* ==========================================================================
+       12. FOOTER
+       ========================================================================== */
+    .footer {
+      background-color: var(--bg-white);
+      border-top: 1px solid var(--border-color);
+      padding: 60px 0 30px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    @media (min-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 2fr 1fr;
+        align-items: center;
+      }
+    }
+
+    .footer-brand .logo {
+      margin-bottom: 12px;
+    }
+
+    .footer-subtitle {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      list-style: none;
+    }
+
+    @media (min-width: 768px) {
+      .footer-links {
+        justify-content: flex-end;
+      }
+    }
+
+    .footer-link {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    .footer-link:hover {
+      color: var(--text-primary);
+    }
+
+    .footer-bottom {
+      padding-top: 30px;
+      border-top: 1px solid var(--border-light);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+
+    @media (min-width: 768px) {
+      .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: 20px;
+    }
+
+    /* ==========================================================================
+       13. PROJECT DETAIL MODAL
+       ========================================================================== */
+    .modal-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(23, 23, 23, 0.6);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s var(--transition-smooth);
+    }
+
+    .modal-backdrop.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-container {
+      background: var(--bg-white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      width: 100%;
+      max-width: 900px;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+      transform: scale(0.95) translateY(20px);
+      transition: transform 0.4s var(--transition-smooth);
+    }
+
+    .modal-backdrop.active .modal-container {
+      transform: scale(1) translateY(0);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--bg-main);
+      border: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: var(--text-primary);
+      z-index: 10;
+      transition: all 0.3s ease;
+    }
+
+    .modal-close:hover {
+      background: var(--text-primary);
+      color: var(--bg-white);
+    }
+
+    .modal-hero-visual {
+      width: 100%;
+      height: 320px;
+      background: var(--bg-ivory);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid var(--border-light);
+      position: relative;
+    }
+
+    .modal-body {
+      padding: 32px;
+    }
+
+    @media (min-width: 768px) {
+      .modal-body {
+        padding: 48px;
+      }
+    }
+
+    .modal-header {
+      margin-bottom: 24px;
+    }
+
+    .modal-cat-year {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--champagne);
+      margin-bottom: 8px;
+    }
+
+    .modal-title {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .modal-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+
+    @media (min-width: 768px) {
+      .modal-grid {
+        grid-template-columns: 2fr 1fr;
+      }
+    }
+
+    .modal-section-title {
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      color: var(--text-primary);
+    }
+
+    .modal-overview {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .modal-meta-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .modal-meta-item strong {
+      display: block;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 4px;
+    }
+
+    .modal-meta-item span {
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .modal-footer {
+      padding-top: 24px;
+      border-top: 1px solid var(--border-light);
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    /* Reduced Motion Preference */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      #bg-canvas, .scanline-overlay, .cursor-glow {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Animated Interactive Light Canvas Background -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="scanline-overlay" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <!-- Main Site Wrapper -->
+  <div class="site-wrapper">
+
+    <!-- Navbar -->
+    <header class="header">
+      <div class="container">
+        <div class="header-inner">
+          <a href="index.html" class="logo" aria-label="Aarya Technologies Home">
+            AARYA<span>®</span>
+          </a>
+
+          <nav aria-label="Main Navigation">
+            <ul class="nav-menu">
+              <li><a href="index.html" class="nav-link">Home</a></li>
+              <li><a href="services.html" class="nav-link">Services</a></li>
+              <li><a href="portfolio.html" class="nav-link active" aria-current="page">Portfolio</a></li>
+              <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+              <li><a href="about.html" class="nav-link">About</a></li>
+              <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+          </nav>
+
+          <a href="contact.html" class="btn-primary nav-cta-desktop">START A PROJECT ↗</a>
+
+          <button class="hamburger" id="hamburgerBtn" aria-label="Toggle Menu" aria-expanded="false">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <ul class="mobile-nav-list">
+        <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+        <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+        <li><a href="portfolio.html" class="mobile-nav-link active">Portfolio</a></li>
+        <li><a href="pricing.html" class="mobile-nav-link">Pricing</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About</a></li>
+        <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="btn-primary" style="width: 100%;">START A PROJECT ↗</a>
+    </div>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="container">
+          <div class="hero-content">
+            <div class="eyebrow">03 / SELECTED WORK</div>
+            <h1 class="hero-title">Digital work that speaks for itself.</h1>
+            <p class="hero-subtitle">A selection of digital experiences designed, engineered and optimized for modern businesses.</p>
+            <a href="contact.html" class="btn-primary">START A PROJECT ↗</a>
+          </div>
+
+          <!-- Futuristic UI Vector Panels Background Decorative Element -->
+          <div class="hero-visual-bg" aria-hidden="true">
+            <div class="hero-ui-panel hero-ui-panel-1">
+              <div style="font-size:0.7rem; font-weight:800; color:var(--champagne); margin-bottom:8px;">SYS.STATUS // ACTIVE</div>
+              <div style="height:4px; width:100%; background:var(--border-light); border-radius:2px; overflow:hidden;">
+                <div style="height:100%; width:78%; background:var(--champagne);"></div>
+              </div>
+            </div>
+            <div class="hero-ui-panel hero-ui-panel-2">
+              <div style="font-size:0.75rem; font-weight:700; margin-bottom:4px;">OPTIMIZED EXPERIENCE</div>
+              <div style="font-size:0.65rem; color:var(--text-secondary);">99.8% Usability Index</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Portfolio Intro -->
+      <section class="intro-section">
+        <div class="container">
+          <div class="intro-grid">
+            <div class="intro-label">OUR WORK</div>
+            <div>
+              <h2 class="intro-heading">From first pixel to final experience.</h2>
+              <p class="intro-text">Every project is approached as a complete digital system — combining strategy, visual design, technology, performance and user experience.</p>
+              <div class="animated-line"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Filter & Grid Container -->
+      <section class="portfolio-section">
+        <div class="container">
+          
+          <!-- Category Filter Navigation -->
+          <div class="filter-wrapper">
+            <div class="filter-nav" role="tablist" aria-label="Portfolio Category Filter">
+              <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">ALL</button>
+              <button class="filter-btn" data-filter="web-design" role="tab" aria-selected="false">WEB DESIGN</button>
+              <button class="filter-btn" data-filter="business" role="tab" aria-selected="false">BUSINESS</button>
+              <button class="filter-btn" data-filter="shopify" role="tab" aria-selected="false">SHOPIFY</button>
+              <button class="filter-btn" data-filter="ui-ux" role="tab" aria-selected="false">UI / UX</button>
+              <button class="filter-btn" data-filter="automation" role="tab" aria-selected="false">AUTOMATION</button>
+            </div>
+          </div>
+
+          <!-- Asymmetric Editorial Portfolio Grid -->
+          <div class="portfolio-grid" id="portfolioGrid">
+
+            <!-- PROJECT 01 -->
+            <article class="project-card" data-category="shopify" data-id="p1">
+              <div class="project-visual">
+                <div class="mockup-container">
+                  <div class="mockup-header">
+                    <span class="mockup-dot"></span>
+                    <span class="mockup-dot"></span>
+                    <span class="mockup-dot"></span>
+                  </div>
+                  <div class="mockup-body">
+                    <div style="height: 14px; width: 40%; background: #E8DFCE; border-radius: 3px;"></div>
+                    <div style="display: flex; gap: 8px; margin-top: 10px;">
+                      <div style="flex: 1; height: 120px; background: #EAE8E1; border-radius: 4px;"></div>
+                      <div style="flex: 1; height: 120px; background: #EAE8E1; border-radius: 4px;"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="project-info">
+                <div class="project-meta">
+                  <span class="project-num">PROJECT 01</span>
+                  <span class="project-cat">SHOPIFY</span>
+                </div>
+                <h3 class="project-title">NOVA COMMERCE</h3>
+                <p class="project-desc">A premium e-commerce experience focused on clean product presentation and conversion.</p>
+                <div class="project-footer">
+                  <div class="project-tags">
+                    <span class="tag">SHOPIFY</span>
+                    <span class="tag">• E-COMMERCE</span>
+                    <span class="tag">• UI/UX</span>
+                  </div>
+                  <span class="project-link">VIEW PROJECT ↗</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- PROJECT 02 -->
+            <article class="project-card" data-category="business" data-id="p2">
+              <div class="project-visual">
+                <div class="mockup-container">
+                  <div class="mockup-header">
+                    <span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span>
+                  </div>
+                  <div class="mockup-body">
+                    <div style="height: 80px; background: var(--border-light); border-radius: 4px; padding:10px;">
+                      <div style="height:8px; width:50%; background:#C6A66B; margin-bottom:6px;"></div>
+                      <div style="height:6px; width:80%; background:#DFDCD4;"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="project-info">
+                <div class="project-meta">
+                  <span class="project-num">PROJECT 02</span>
+                  <span class="project-cat">BUSINESS</span>
+                </div>
+                <h3 class="project-title">ARC BUSINESS</h3>
+                <p class="project-desc">A modern business website designed to communicate trust, expertise and premium positioning.</p>
+                <div class="project-footer">
+                  <div class="project-tags">
+                    <span class="tag">WEB DESIGN</span>
+                    <span class="tag">• BUSINESS</span>
+                    <span class="tag">• SEO</span>
+                  </div>
+                  <span class="project-link">VIEW PROJECT ↗</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- PROJECT 03 -->
+            <article class="project-card" data-category="web-design" data-id="p3">
+              <div class="project-visual">
+                <div class="mockup-container">
+                  <div class="mockup-header">
+                    <span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span>
+                  </div>
+                  <div class="mockup-body" style="align-items: center; justify-content: center;">
+                    <div style="font-weight:800; font-size:1.2rem; letter-spacing:-0.03em; color:#171717;">MONO.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="project-info">
+                <div class="project-meta">
+                  <span class="project-num">PROJECT 03</span>
+                  <span class="project-cat">WEB DESIGN</span>
+                </div>
+                <h3 class="project-title">MONO STUDIO</h3>
+                <p class="project-desc">A minimal creative portfolio experience with editorial typography and immersive interactions.</p>
+                <div class="project-footer">
+                  <div class="project-tags">
+                    <span class="tag">WEB</span>
+                    <span class="tag">• UI/UX</span>
+                    <span class="tag">• CREATIVE</span>
+                  </div>
+                  <span class="project-link">VIEW PROJECT ↗</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- PROJECT 04 -->
+            <article class="project-card" data-category="shopify" data-id="p4">
+              <div class="project-visual">
+                <div class="mockup-container">
+                  <div class="mockup-header">
+                    <span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span>
+                  </div>
+                  <div class="mockup-body">
+                    <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap:8px; height:100%;">
+                      <div style="background:#EAE8E1; border-radius:4px;"></div>
+                      <div style="background:#EAE8E1; border-radius:4px;"></div>
+                      <div style="background:#EAE8E1; border-radius:4px;"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="project-info">
+                <div class="project-meta">
+                  <span class="project-num">PROJECT 04</span>
+                  <span class="project-cat">SHOPIFY</span>
+                </div>
+                <h3 class="project-title">VANTA STORE</h3>
+                <p class="project-desc">A conversion-focused online store concept designed for a modern product brand.</p>
+                <div class="project-footer">
+                  <div class="project-tags">
+                    <span class="tag">SHOPIFY</span>
+                    <span class="tag">• E-COMMERCE</span>
+                    <span class="tag">• CONVERSION</span>
+                  </div>
+                  <span class="project-link">VIEW PROJECT ↗</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- PROJECT 05 -->
+            <article class="project-card" data-category="automation" data-id="p5">
+              <div class="project-visual">
+                <div class="mockup-container">
+                  <div class="mockup-header">
+                    <span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span>
+                  </div>
+                  <div class="mockup-body" style="justify-content:space-around;">
+                    <div style="height:2px; background:var(--champagne); width:100%; position:relative;">
+                      <div style="position:absolute; top:-4px; left:30%; width:10px; height:10px; border-radius:50%; background:#171717;"></div>
+                      <div style="position:absolute; top:-4px; left:70%; width:10px; height:10px; border-radius:50%; background:#C6A66B;"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="project-info">
+                <div class="project-meta">
+                  <span class="project-num">PROJECT 05</span>
+                  <span class="project-cat">AUTOMATION</span>
+                </div>
+                <h3 class="project-title">FLOW SYSTEM</h3>
+                <p class="project-desc">A digital workflow concept connecting website leads with automated communication.</p>
+                <div class="project-footer">
+                  <div class="project-tags">
+                    <span class="tag">AUTOMATION</span>
+                    <span class="tag">• WORKFLOW</span>
+                    <span class="tag">• BUSINESS</span>
+                  </div>
+                  <span class="project-link">VIEW PROJECT ↗</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- PROJECT 06 -->
+            <article class="project-card" data-category="ui-ux" data-id="p6">
+              <div class="project-visual">
+                <div class="mockup-container">
+                  <div class="mockup-header">
+                    <span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span>
+                  </div>
+                  <div class="mockup-body">
+                    <div style="display:flex; gap:10px; height:100%;">
+                      <div style="width:30%; background:#DFDCD4; border-radius:4px;"></div>
+                      <div style="flex:1; background:#F1EFE9; border-radius:4px;"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="project-info">
+                <div class="project-meta">
+                  <span class="project-num">PROJECT 06</span>
+                  <span class="project-cat">UI / UX</span>
+                </div>
+                <h3 class="project-title">NOVA DIGITAL</h3>
+                <p class="project-desc">A premium interface system created around clarity, usability and modern digital interaction.</p>
+                <div class="project-footer">
+                  <div class="project-tags">
+                    <span class="tag">UI/UX</span>
+                    <span class="tag">• DESIGN SYSTEM</span>
+                    <span class="tag">• WEB</span>
+                  </div>
+                  <span class="project-link">VIEW PROJECT ↗</span>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Project Highlight -->
+      <section class="featured-section">
+        <div class="container">
+          <div class="featured-card">
+            <div class="featured-content">
+              <div class="eyebrow">FEATURED EXPERIENCE</div>
+              <h2 class="featured-title">NOVA COMMERCE</h2>
+              <p class="featured-desc">A premium Shopify commerce experience designed around product discovery, trust and conversion.</p>
+              
+              <div class="descriptors-list">
+                <span class="descriptor-pill">DESIGN</span>
+                <span class="descriptor-pill">PREMIUM</span>
+                <span class="descriptor-pill">PERFORMANCE</span>
+                <span class="descriptor-pill">OPTIMIZED</span>
+                <span class="descriptor-pill">UX</span>
+                <span class="descriptor-pill">CONVERSION-FOCUSED</span>
+              </div>
+
+              <button class="btn-primary trigger-featured-modal" data-id="p1">VIEW CASE STUDY ↗</button>
+            </div>
+
+            <div class="featured-visual">
+              <div class="mockup-container" style="width:90%; height:90%; margin:5% auto;">
+                <div class="mockup-header">
+                  <span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span>
+                </div>
+                <div class="mockup-body" style="background:#FFFFFF;">
+                  <div style="height:20px; width:30%; background:var(--champagne-light); margin-bottom:12px;"></div>
+                  <div style="display:grid; grid-template-columns:2fr 1fr; gap:12px; height:70%;">
+                    <div style="background:var(--bg-ivory); border-radius:4px;"></div>
+                    <div style="display:flex; flex-direction:column; gap:8px;">
+                      <div style="height:12px; background:var(--border-color);"></div>
+                      <div style="height:12px; background:var(--border-color);"></div>
+                      <div style="height:24px; background:var(--text-primary); margin-top:auto;"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Technology Section -->
+      <section class="tech-section">
+        <div class="container">
+          <h3 class="tech-title">BUILT WITH PURPOSE</h3>
+          <div class="tech-grid">
+            <span class="tech-item">HTML5</span>
+            <span class="tech-item">CSS3</span>
+            <span class="tech-item">JAVASCRIPT</span>
+            <span class="tech-item">SHOPIFY</span>
+            <span class="tech-item">SEO</span>
+            <span class="tech-item">AUTOMATION</span>
+            <span class="tech-item">UI/UX</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Process Section -->
+      <section class="process-section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">HOW WE APPROACH EVERY PROJECT</h2>
+          </div>
+
+          <div class="process-timeline">
+            <div class="process-step">
+              <span class="step-num">01</span>
+              <h3 class="step-title">DISCOVER</h3>
+              <p class="step-desc">Understand the business goals, audience, and market positioning.</p>
+            </div>
+            <div class="process-step">
+              <span class="step-num">02</span>
+              <h3 class="step-title">STRATEGIZE</h3>
+              <p class="step-desc">Define the digital direction, architecture, and experience roadmap.</p>
+            </div>
+            <div class="process-step">
+              <span class="step-num">03</span>
+              <h3 class="step-title">DESIGN</h3>
+              <p class="step-desc">Create the visual system, interface components, and typography.</p>
+            </div>
+            <div class="process-step">
+              <span class="step-num">04</span>
+              <h3 class="step-title">ENGINEER</h3>
+              <p class="step-desc">Build the digital experience using clean, production-ready code.</p>
+            </div>
+            <div class="process-step">
+              <span class="step-num">05</span>
+              <h3 class="step-title">OPTIMIZE</h3>
+              <p class="step-desc">Refine performance, responsiveness, SEO, and overall usability.</p>
+            </div>
+            <div class="process-step">
+              <span class="step-num">06</span>
+              <h3 class="step-title">LAUNCH</h3>
+              <p class="step-desc">Deliver the final system and ensure continuous success.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta-section">
+        <div class="container">
+          <div class="cta-content">
+            <h2 class="cta-title">YOUR PROJECT COULD BE NEXT.</h2>
+            <p class="cta-text">Have a business, product or idea that deserves a better digital presence? Let's build it.</p>
+            <div class="cta-buttons">
+              <a href="contact.html" class="btn-primary btn-champagne">START A PROJECT ↗</a>
+              <a href="https://wa.me/" target="_blank" rel="noopener" class="btn-secondary btn-outline-white">WHATSAPP US ↗</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="logo">AARYA<span>®</span></a>
+            <p class="footer-subtitle">DIGITAL EXPERIENCES / WEB / SHOPIFY / AUTOMATION</p>
+          </div>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="services.html" class="footer-link">Services</a></li>
+            <li><a href="portfolio.html" class="footer-link">Portfolio</a></li>
+            <li><a href="pricing.html" class="footer-link">Pricing</a></li>
+            <li><a href="about.html" class="footer-link">About</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 Aarya Technologies. All Rights Reserved.</p>
+          <div class="footer-legal">
+            <a href="#" class="footer-link">Privacy Policy</a>
+            <a href="#" class="footer-link">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Project Detail Modal -->
+  <div class="modal-backdrop" id="projectModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-container">
+      <button class="modal-close" id="modalCloseBtn" aria-label="Close modal">×</button>
+      
+      <div class="modal-hero-visual" id="modalVisual">
+        <!-- Injected via JavaScript -->
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-header">
+          <div class="modal-cat-year" id="modalCatYear">DEMO PROJECT // 2026</div>
+          <h2 class="modal-title" id="modalTitle">Project Title</h2>
+        </div>
+
+        <div class="modal-grid">
+          <div>
+            <h3 class="modal-section-title">Overview</h3>
+            <p class="modal-overview" id="modalOverview">Detailed project explanation goes here...</p>
+          </div>
+
+          <div>
+            <ul class="modal-meta-list">
+              <li class="modal-meta-item">
+                <strong>Services Provided</strong>
+                <span id="modalServices">Web Design, UI/UX</span>
+              </li>
+              <li class="modal-meta-item">
+                <strong>Technology Stack</strong>
+                <span id="modalTech">HTML5, CSS3, JavaScript</span>
+              </li>
+              <li class="modal-meta-item">
+                <strong>Primary Goal</strong>
+                <span id="modalGoal">Brand Positioning & Performance</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <a href="contact.html" class="btn-primary">START A PROJECT ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Client-Side Security & Deterrent Notice -->
+  <!-- NOTE: Client-side protection mechanisms are UI/UX deterrents against casual copying and do not replace true server-side security. -->
+
+  <!-- Javascript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      'use strict';
+
+      /* ==========================================================================
+         01. CANVAS ANIMATED BACKGROUND
+         ========================================================================== */
+      const canvas = document.getElementById('bg-canvas');
+      const ctx = canvas.getContext('2d');
+      let width, height;
+      let particles = [];
+      
+      // Responsive Particle Counts
+      function getParticleCount() {
+        const w = window.innerWidth;
+        if (w < 768) return 28;
+        if (w < 1024) return 50;
+        return 80;
+      }
+
+      function resizeCanvas() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      }
+
+      class Particle {
+        constructor() {
+          this.reset();
+        }
+
+        reset() {
+          this.x = Math.random() * width;
+          this.y = Math.random() * height;
+          this.vx = (Math.random() - 0.5) * 0.4;
+          this.vy = (Math.random() - 0.5) * 0.4;
+          this.radius = Math.random() * 1.8 + 0.6;
+          this.alpha = Math.random() * 0.4 + 0.1;
+        }
+
+        update() {
+          this.x += this.vx;
+          this.y += this.vy;
+
+          if (this.x < 0 || this.x > width) this.vx *= -1;
+          if (this.y < 0 || this.y > height) this.vy *= -1;
+        }
+
+        draw() {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(198, 166, 107, ${this.alpha})`;
+          ctx.fill();
+        }
+      }
+
+      function initCanvas() {
+        resizeCanvas();
+        particles = [];
+        const count = getParticleCount();
+        for (let i = 0; i < count; i++) {
+          particles.push(new Particle());
+        }
+      }
+
+      function drawConnections() {
+        const maxDist = 120;
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist < maxDist) {
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.strokeStyle = `rgba(223, 220, 212, ${1 - dist / maxDist})`;
+              ctx.lineWidth = 0.6;
+              ctx.stroke();
+            }
+          }
+        }
+      }
+
+      let animationFrameId;
+      function animate() {
+        if (document.visibilityState === 'visible') {
+          ctx.clearRect(0, 0, width, height);
+          
+          particles.forEach(p => {
+            p.update();
+            p.draw();
+          });
+          
+          drawConnections();
+        }
+        animationFrameId = requestAnimationFrame(animate);
+      }
+
+      window.addEventListener('resize', () => {
+        resizeCanvas();
+        initCanvas();
+      });
+
+      // Respect prefers-reduced-motion
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      if (!prefersReducedMotion.matches) {
+        initCanvas();
+        animate();
+      }
+
+      /* ==========================================================================
+         02. CURSOR FOLLOW GLOW
+         ========================================================================== */
+      const cursorGlow = document.getElementById('cursorGlow');
+      if (window.innerWidth > 992 && cursorGlow) {
+        window.addEventListener('mousemove', (e) => {
+          cursorGlow.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+        }, { passive: true });
+      }
+
+      /* ==========================================================================
+         03. MOBILE NAVBAR TOGGLE
+         ========================================================================== */
+      const hamburgerBtn = document.getElementById('hamburgerBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+      function toggleMobileMenu() {
+        const isOpen = mobileMenu.classList.contains('active');
+        if (isOpen) {
+          mobileMenu.classList.remove('active');
+          hamburgerBtn.classList.remove('active');
+          hamburgerBtn.setAttribute('aria-expanded', 'false');
+          mobileMenu.setAttribute('aria-hidden', 'true');
+          document.body.classList.remove('scroll-locked');
+        } else {
+          mobileMenu.classList.add('active');
+          hamburgerBtn.classList.add('active');
+          hamburgerBtn.setAttribute('aria-expanded', 'true');
+          mobileMenu.setAttribute('aria-hidden', 'false');
+          document.body.classList.add('scroll-locked');
+        }
+      }
+
+      hamburgerBtn.addEventListener('click', toggleMobileMenu);
+
+      mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (mobileMenu.classList.contains('active')) toggleMobileMenu();
+        });
+      });
+
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+          toggleMobileMenu();
+        }
+      });
+
+      /* ==========================================================================
+         04. PORTFOLIO CATEGORY FILTERING
+         ========================================================================== */
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const projectCards = document.querySelectorAll('.project-card');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Active state switching
+          filterBtns.forEach(b => {
+            b.classList.remove('active');
+            b.setAttribute('aria-selected', 'false');
+          });
+          btn.classList.add('active');
+          btn.setAttribute('aria-selected', 'true');
+
+          const filter = btn.getAttribute('data-filter');
+
+          projectCards.forEach(card => {
+            const category = card.getAttribute('data-category');
+
+            if (filter === 'all' || category === filter) {
+              card.classList.remove('is-hidden');
+            } else {
+              card.classList.add('is-hidden');
+            }
+          });
+        });
+      });
+
+      /* ==========================================================================
+         05. PROJECT DETAIL MODAL INTERACTION
+         ========================================================================== */
+      const projectData = {
+        p1: {
+          title: 'NOVA COMMERCE',
+          category: 'SHOPIFY',
+          year: '2026',
+          overview: 'Nova Commerce is a luxury e-commerce concept developed on Shopify. Built with high performance standards and editorial layout design, it elevates product storytelling and removes friction from modern checkout flows.',
+          services: 'Shopify Store Setup, UI/UX Design, Conversion Optimization',
+          tech: 'Liquid, HTML5, CSS3, JavaScript',
+          goal: 'Maximize conversion rate & establish luxury brand authority'
+        },
+        p2: {
+          title: 'ARC BUSINESS',
+          category: 'BUSINESS',
+          year: '2026',
+          overview: 'ARC Business represents a corporate digital transformation project. The focus was to project stability, authority, and seamless client communication through clear typography and structural whitespace.',
+          services: 'Corporate Web Design, Technical SEO, Performance Optimization',
+          tech: 'HTML5, CSS3, Vanilla JS, SEO Schema',
+          goal: 'Build digital trust & capture high-value enterprise leads'
+        },
+        p3: {
+          title: 'MONO STUDIO',
+          category: 'WEB DESIGN',
+          year: '2026',
+          overview: 'A minimalist creative studio platform built for high visual impact. Employs precision alignment, interactive scroll mechanics, and bespoke visual components to highlight artistic portfolios.',
+          services: 'Creative Direction, Web Development, Micro-interactions',
+          tech: 'Vanilla JavaScript, HTML5 Canvas, CSS Grid',
+          goal: 'Provide an unforgettable editorial creative experience'
+        },
+        p4: {
+          title: 'VANTA STORE',
+          category: 'SHOPIFY',
+          year: '2026',
+          overview: 'Vanta Store offers a high-velocity direct-to-consumer digital storefront. Built specifically to handle large scale inventory while maintaining ultra-fast dynamic page load speeds.',
+          services: 'Shopify Customization, Page Speed Optimization, UX Architecture',
+          tech: 'Shopify Liquid, Custom JS, Tailwind Architecture',
+          goal: 'Sub-second mobile loading speed & friction-free discovery'
+        },
+        p5: {
+          title: 'FLOW SYSTEM',
+          category: 'AUTOMATION',
+          year: '2026',
+          overview: 'An automated workflow system that connects digital ad landing pages directly to CRM pipelines, trigger email notifications, and customer management tools without manual intervention.',
+          services: 'Workflow Automation, API Integration, Lead Management Systems',
+          tech: 'REST APIs, Webhooks, JavaScript, Node Services',
+          goal: 'Eliminate administrative response delay for incoming leads'
+        },
+        p6: {
+          title: 'NOVA DIGITAL',
+          category: 'UI / UX',
+          year: '2026',
+          overview: 'A complete design system and interface system built for modern web platforms. Features custom accessibility compliance, atomic component libraries, and light luxury aesthetics.',
+          services: 'UI/UX Design System, Component Library, Prototyping',
+          tech: 'Figma Systems, CSS Variables, HTML Structural Guidelines',
+          goal: 'Standardize interface design across enterprise web applications'
+        }
+      };
+
+      const projectModal = document.getElementById('projectModal');
+      const modalCloseBtn = document.getElementById('modalCloseBtn');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalCatYear = document.getElementById('modalCatYear');
+      const modalOverview = document.getElementById('modalOverview');
+      const modalServices = document.getElementById('modalServices');
+      const modalTech = document.getElementById('modalTech');
+      const modalGoal = document.getElementById('modalGoal');
+      const modalVisual = document.getElementById('modalVisual');
+
+      function openModal(id) {
+        const data = projectData[id];
+        if (!data) return;
+
+        modalTitle.textContent = data.title;
+        modalCatYear.textContent = `DEMO PROJECT // ${data.category} // ${data.year}`;
+        modalOverview.textContent = data.overview;
+        modalServices.textContent = data.services;
+        modalTech.textContent = data.tech;
+        modalGoal.textContent = data.goal;
+
+        // Visual Placeholder Injection
+        modalVisual.innerHTML = `
+          <div class="mockup-container" style="width: 80%; height: 75%;">
+            <div class="mockup-header">
+              <span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span>
+            </div>
+            <div class="mockup-body" style="display:flex; align-items:center; justify-content:center; background:#FAF9F6;">
+              <span style="font-weight:800; font-size:1.2rem; color:var(--champagne); letter-spacing:0.1em;">
+                ${data.title}
+              </span>
+            </div>
+          </div>
+        `;
+
+        projectModal.classList.add('active');
+        projectModal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('scroll-locked');
+      }
+
+      function closeModal() {
+        projectModal.classList.remove('active');
+        projectModal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('scroll-locked');
+      }
+
+      // Event Listeners for Cards & Featured Trigger
+      projectCards.forEach(card => {
+        card.addEventListener('click', () => {
+          const id = card.getAttribute('data-id');
+          openModal(id);
+        });
+      });
+
+      document.querySelectorAll('.trigger-featured-modal').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const id = btn.getAttribute('data-id');
+          openModal(id);
+        });
+      });
+
+      modalCloseBtn.addEventListener('click', closeModal);
+
+      projectModal.addEventListener('click', (e) => {
+        if (e.target === projectModal) closeModal();
+      });
+
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && projectModal.classList.contains('active')) {
+          closeModal();
+        }
+      });
+
+      /* ==========================================================================
+         06. CLIENT-SIDE RIGHT CLICK & SHORTCUT PROTECTION (DETERRENT)
+         ========================================================================== */
+      document.addEventListener('contextmenu', (e) => e.preventDefault());
+
+      document.addEventListener('keydown', (e) => {
+        // Allow standard inputs inside fields
+        const targetTag = e.target.tagName.toLowerCase();
+        if (['input', 'textarea', 'select'].includes(targetTag)) return;
+
+        // Key combos to restrict
+        const forbiddenKeys = ['u', 's', 'p', 'a', 'c', 'x', 'v', 'f'];
+        const isCmdOrCtrl = e.ctrlKey || e.metaKey;
+
+        // F12 or DevTools Combos
+        if (e.key === 'F12' || (isCmdOrCtrl && e.shiftKey && ['I', 'J', 'C'].includes(e.key.toUpperCase()))) {
+          e.preventDefault();
+        }
+
+        // Ctrl/Cmd + U, S, P, A, C, etc.
+        if (isCmdOrCtrl && forbiddenKeys.includes(e.key.toLowerCase())) {
+          e.preventDefault();
+        }
+      });
+
+      // Prevent Image Dragging
+      document.querySelectorAll('img').forEach(img => {
+        img.addEventListener('dragstart', (e) => e.preventDefault());
+      });
+
+    });
+  </script>
+</body>
+</html>
